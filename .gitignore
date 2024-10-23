@@ -15,5 +15,7 @@ secrets.yaml
 home-assistant.log
 id_rsa*
 *.conf
+*.pem
 lutron_caseta*.pem
 wyze_config.ini
+.tobin@thedunnhome.com.august.conf
