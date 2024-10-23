@@ -14,3 +14,6 @@ secrets.yaml
 .goolge.token
 home-assistant.log
 id_rsa*
+.august.conf
+lutron_caseta*.pem
+wyze_config.ini
