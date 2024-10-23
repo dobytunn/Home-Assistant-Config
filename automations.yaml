@@ -5514,3 +5514,17 @@
         entity_id: ba00c2851bf5da7f09338c29b94c8a14
         type: clean
   mode: single
+- id: '1729699464635'
+  alias: Weekly GitHub Backup
+  description: This sync's the contents of /config to Github repository once a week
+    on Sunday at 1am.
+  triggers:
+  - trigger: time
+    at: 01:00:00
+  conditions:
+  - condition: time
+    weekday:
+    - sun
+  actions:
+  - action: shell_command.git_backup
+  mode: single
