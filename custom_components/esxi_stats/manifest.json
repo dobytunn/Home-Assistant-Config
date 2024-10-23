@@ -1,0 +1,12 @@
+{
+  "domain": "esxi_stats",
+  "name": "ESXi Stats",
+  "codeowners": ["@wxt9861"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/wxt9861/esxi_stats",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/wxt9861/esxi_stats/issues",
+  "requirements": ["pyvmomi==8.0.2.0.1"],
+  "version": "0.7.1"
+}

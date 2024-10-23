@@ -1,0 +1,23 @@
+influxdb:  
+  host: a0d7b954-influxdb
+  port: 8086
+  database: homeassistant
+  username: homeassistant
+  password: !secret influx_p
+  max_retries: 3
+  default_measurement: state
+  include:
+    domains:
+      - counter
+    entity_globs:
+      - device.*_dunn
+      - sensor.*_temperature
+      - sensor.*_humidity
+      - sensor.energy*
+      - sensor.household*
+      - sensor.*_bin
+      - sensor.recycle*
+      - sensor.roborock_*
+    entities:
+      - climate.thermostat
+      - climate.upstairs_thermostat

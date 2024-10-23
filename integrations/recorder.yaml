@@ -1,0 +1,69 @@
+#recorder:
+#  db_url: !secret mariadb_url
+#  purge_keep_days: 30
+#  commit_interval: 20
+#  include:
+#    domains:
+#      - alarm_control_panel
+#      - cover
+#      - climate
+#      - fan
+#      - light
+#      - lock
+#      - person
+#      - remote
+#      - switch
+#    entity_globs:
+#      - sensor.tautulli
+#      - sensor.speedtest_download
+#      - sensor.speedtest_ping
+#      - sensor.speedtest_upload
+#      - sensor.pi_hole_dns_queries_today
+#      - sensor.pi_hole_ads_blocked_today
+#      - sensor.pi_hole_domains_blocked
+#      - sensor.ombi_movie_requests
+#      - sensor.ombi_tv_show_requests
+#      - sensor.ombi_pending_requests
+#      - sensor.qbittorrent_down_speed
+#      - sensor.qbittorrent_status
+#- sensor.qbittorrent_up_speed
+#      - sensor.dunnnas1_cpu_usage
+#      - sensor.dunnnas1_memory_usage
+#      - sensor.dunnnas1_used_space_datavol2
+#      - sensor.*_free_space
+#      - sensor.*_memory_used
+#      - sensor.*_cpu_used
+#      - sensor.*_used_space
+#      - sensor.*humidity
+#      - binary_sensor.*_doorbell
+#      - binary_sensor.*_motion
+#      - binary_sensor.*_occupancy
+#      - binary_sensor.*_sensor
+#      - sensor.*_temperature
+#      - binary_sensor.*_ping
+#      - binary_sensor.*_window
+#      - binary_sensor.1st_floor_windows
+#      - binary_sensor.back_door_open
+#      - calendar.*_colleciton
+#      - calendar.*_bin
+#      - sensor.energy_daily_standard
+#      - sensor.energy
+#      - sensor.dte_energy_bridge
+#      - sensor.dte_instantaneous_demand
+#      - sensor.energy_spent
+#      - sensor.energy_daily
+#      - sensor.current_energy_usage
+#      - sensor.household_electricity_usage
+#      - sensor.dte_price
+#      - sensor.household_electricity_usage_cost
+#      - binary_sensor.back_room_back_window
+#      - binary_sensor.back_room_side_window
+#      - binary_sensor.kitchen_window
+#      - binary_sensor.dining_room_window
+#      - binary_sensor.living_room_side_window
+#      - binary_sensor.living_room_front_window
+#      - binary_sensor.teagans_window
+#      - binary_sensor.bedroom_window
+#  exclude:
+#    entities:
+#      - alarm_control_panel.aqara_hub_m2_f034

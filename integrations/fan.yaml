@@ -1,0 +1,56 @@
+fan:
+  - platform: template
+    fans:
+      teagans_fan:
+        friendly_name: "Teagan's Fan"
+        value_template: "{{ states('switch.teagans_fan') }}"
+        turn_on:
+          service: homeassistant.turn_on
+          entity_id: switch.teagans_fan
+        turn_off:
+          service: homeassistant.turn_off
+          entity_id: switch.teagans_fan
+  - platform: template
+    fans:
+      kagans_fan:
+        friendly_name: "Kagan's Fan"
+        value_template: "{{ states('switch.kagans_fan') }}"
+        turn_on:
+          service: homeassistant.turn_on
+          entity_id: switch.kagans_fan
+        turn_off:
+          service: homeassistant.turn_off
+          entity_id: switch.kagans_fan
+  - platform: template
+    fans:
+      upstairs_fan:
+        friendly_name: "Upstairs Fan"
+        value_template: "{{ states('switch.upstairs_fan') }}"
+        turn_on:
+          service: homeassistant.turn_on
+          entity_id: switch.upstairs_fan
+        turn_off:
+          service: homeassistant.turn_off
+          entity_id: switch.upstairs_fan
+  - platform: template
+    fans:
+      gannons_fan:
+        friendly_name: "Gannon's Fan"
+        value_template: "{{ states('switch.gannons_fan') }}"
+        turn_on:
+          service: homeassistant.turn_on
+          entity_id: switch.gannons_fan
+        turn_off:
+          service: homeassistant.turn_off
+          entity_id: switch.gannons_fan
+  - platform: template
+    fans:
+      bench_fan:
+        friendly_name: "Bench Fan"
+        value_template: "{{ states('switch.bench_fan') }}"
+        turn_on:
+          service: homeassistant.turn_on
+          entity_id: switch.bench_fan
+        turn_off:
+          service: homeassistant.turn_off
+          entity_id: switch.bench_fan

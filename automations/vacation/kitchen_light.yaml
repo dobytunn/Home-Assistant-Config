@@ -1,0 +1,15 @@
+id: '1599528072989'
+alias: Vacation Kitchen Light
+description: ''
+trigger:
+- entity_id: sensor.vacation_kitchen
+  platform: state
+condition:
+- condition: state
+  entity_id: input_boolean.vacation_mode
+  state: 'on'
+action:
+- data: {}
+  entity_id: light.kitchen_light
+  service: light.toggle
+mode: single

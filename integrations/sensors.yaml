@@ -1,0 +1,102 @@
+sensor:
+#### Time/Date Sensor ####
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+      - 'date_time'
+      - 'date_time_utc'
+      - 'date_time_iso'
+      - 'time_date'
+      - 'time_utc'
+#### Radarr Sensor ####
+#  - platform: radarr
+#    api_key: !secret radarr_api
+#    host: !secret radarr_host
+#    port: !secret radarr_port
+#    include_paths:
+#      - M:/Movies
+#    monitored_conditions:
+#      - upcoming
+#      - commands
+#      - diskspace
+#      - status
+#    days: 14
+#    ssl: false
+#    unit: TB
+#### Next Holiday Sensor ####
+  - platform: next_holiday
+    sources:
+      - country: "USA"
+        state: "MI"
+#### Day of the Week Sensor ####
+  - platform: template
+    sensors:
+      dayoftheweek:
+        value_template: "{{ ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][now().weekday()] }}"
+#### Active Lights Sensor ####
+  - platform: template
+    sensors: 
+      active_lights: 
+        value_template: "{{ states | selectattr('entity_id', 'in', state_attr('group.all_lights', 'entity_id')) | selectattr('state', 'eq', 'on') | list | count }}"
+#### Active Fans Sensor ####
+  - platform: template
+    sensors: 
+      active_fans: 
+        value_template: "{{ states | selectattr('entity_id', 'in', state_attr('group.all_fans', 'entity_id')) | selectattr('state', 'eq', 'on') | list | count }}"
+#### Kitchen Tablet Battery Level Sensor ####
+#  - platform: template
+#    sensors:
+#      kitchen_ipad_battery_level:
+#        friendly_name: "Kitchen iPad Battery Level"
+#        unit_of_measurement: '%'
+#        value_template: "{{ states.sensor.kitchen_ipad_battery_state.attributes.battery }}"
+#### DTE Energy Bridge ####
+  - platform: integration
+    source: sensor.dte_energy_bridge_summary
+    name: energy_spent
+    unit_prefix: k
+    round: 2
+  - platform: template
+    sensors:
+      dte_price:
+        friendly_name: DTE Time of Day Pricing
+        unit_of_measurement: 'USD/kWh'
+        value_template: >
+          {% set tariff = { "PeakSummer": 0.2098, "PeakWinter": 0.1675, "OffPeak": 0.1545 } %}
+          {% set time = { "month": (now().strftime('%m') | int), "hour": (now().strftime('%H') | int), "weekday": (now().weekday() | int ) } %}
+          {%if (time.hour > 19) or (time.hour < 15) %}
+              {{ tariff.OffPeak }}
+          {%elif ((time.month >= 10) or (time.month <= 5)) and (time.weekday < 5) %}
+            {%if (time.hour >= 15) and (time.hour <= 19) %}
+              {{ tariff.PeakWinter }}
+            {%endif%}
+          {%elif ((time.month > 5) and (time.month < 10)) and (time.weekday < 5) %}
+            {%if (time.hour >= 15) and (time.hour <= 19) %}
+              {{ tariff.PeakSummer }}
+            {%endif%}
+          {%else%}
+              {{ tariff.OffPeak }}
+          {%endif%}
+#### DTE Current Price Sensor ####
+template:
+  - sensor:
+      - name: "D1.7 Inflow"
+        unit_of_measurement: "USD/kWh"
+        device_class: monetary
+        state: >
+          {% set month = now().month %}
+          {% set hour = now().hour %}
+          {% if month in [10, 11, 12, 1, 2, 3, 4, 5] %}
+          {% if hour >= 11 and hour < 19 %}
+            0.15863
+          {% else %}
+            0.13635
+          {% endif %}
+          {% elif month in [6, 7, 8, 9] %}
+          {% if hour >= 11 and hour < 19 %}
+            0.193342
+          {% else %}
+            0.13289
+          {% endif %}
+          {% endif %}

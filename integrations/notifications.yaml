@@ -1,0 +1,14 @@
+ios:
+#  push:
+  categories:
+    - name: "Door Bell Control"
+      identifier: 'doorbell_notification'
+      actions:
+        - identifier: 'UNLOCK_BACK_DOOR'
+          title: 'Unlock Back Door'
+    - name: "Garage Door Control"
+      identifier: 'security_notification'
+      actions:
+        - identifier: 'CLOSE_GARAGE_DOOR'
+          title: 'Close Garage Door'
+            

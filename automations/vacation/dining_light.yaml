@@ -1,0 +1,15 @@
+id: '1599528072987'
+alias: Vacation Dining Light
+description: ''
+trigger:
+- entity_id: sensor.vacation_dining_room
+  platform: state
+condition:
+- condition: state
+  entity_id: input_boolean.vacation_mode
+  state: 'on'
+action:
+- data: {}
+  entity_id: light.dining_room_light
+  service: light.toggle
+mode: single

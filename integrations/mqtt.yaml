@@ -1,0 +1,20 @@
+mqtt:
+  sensor:
+    - name: "DTE Energy Bridge"
+      icon: mdi:transmission-tower
+      state_topic: "event/metering/summation/minute"
+      unit_of_measurement: 'W'
+      value_template: "{{ value_json.value | round (0) }}"
+    - name: "DTE Instantaneous Demand"
+      icon: mdi:transmission-tower
+      state_topic: "event/metering/instantaneous_demand"
+      unit_of_measurement: 'W'
+      value_template: "{{ value_json.demand }}"
+    - name: "Household Electricity Usage"
+      icon: mdi:transmission-tower
+      state_topic: "event/metering/summation/minute"
+      unit_of_measurement: 'kWh'
+      value_template: "{{ value_json.value | float / 6000 }}"
+      last_reset_value_template: "{{ now().fromtimestamp(value_json.time / 1000).replace(tzinfo=now().tzinfo) }}"
+      device_class: energy
+      state_class: total

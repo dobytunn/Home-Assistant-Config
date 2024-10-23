@@ -1,0 +1,16 @@
+#localtuya:
+#  - host: 10.0.110.110
+#    device_id: ebff8eb9498148127dn56y
+#    local_key: 73e6dd3146083160
+#    friendly_name: Kitchen Strip One
+#    protocol_version: "3.3"
+#    entities:
+#      - platform: switch
+#        friendly_name: Kitchen Plug One
+#        id: 1
+#      - platform: switch
+#        friendly_name: Kitchen Plug Two
+#        id: 2
+#      - platform: switch
+#        friendly_name: Kitchen Tablet Plug
+#        id: 3

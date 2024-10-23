@@ -1,0 +1,3 @@
+timer:
+  alarm_pending:
+    duration: "00:00:10"

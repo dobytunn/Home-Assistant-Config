@@ -1,0 +1,239 @@
+switch.switchlinc_relay_dual_band_43_f0_cc:
+  friendly_name: Game Room Light Switch
+  icon: mdi:light-switch
+light.led_bulb_32_bc_ed:
+  friendly_name: Game Room Light
+light.led_bulb_32_c6_1b:
+  friendly_name: Laundry Room Light Two
+switch.on_off_module_53_19_55:
+  friendly_name: Garage Heater
+  icon: mdi:fan
+light.led_bulb_3e_fe_49:
+  friendly_name: Office Light
+switch.on_off_module_53_1b_d3:
+  friendly_name: Bench Light
+light.lamplinc_dimmer_27_1a_0c:
+  friendly_name: Game Room Rope Light
+light.lamplinc_dimmer_27_1a_45:
+  friendly_name: Wall Fan
+  icon: mdi:fan
+light.lamplinc_dimmer_3e_7f_f5:
+  friendly_name: Office Lamp
+  icon: mdi:lamp
+light.lamplinc_dimmer_47_8b_d8:
+  friendly_name: Game Room Lamp Two
+  icon: mdi:floor-lamp
+switch.on_off_outdoor_module_3f_df_c2:
+  friendly_name: Garage Receiver
+  icon: mdi:audio-video
+switch.on_off_outdoor_module_4e_6e_b4:
+  friendly_name: Outdoor Decorations
+  icon: mdi:pine-tree
+switch.on_off_module_54_ac_bc:
+  friendly_name: Bar sign
+  icon: mdi:sign-text
+light.led_bulb_32_c2_92:
+  friendly_name: Cellar Light
+switch.game_room_space_heater:
+  icon: mdi:radiator
+switch.002006595ccf7fbbc5ab_3:
+  icon: mdi:radiator
+sensor.allergy_index_today:
+  friendly_name: Allergy's Today
+sensor.allergy_index_tomorrow:
+  friendly_name: Allergy's Tomorrow
+sensor.gismeteo_humidity:
+  friendly_name: Humidity
+switch.living_room_fireplace:
+  icon: mdi:fireplace
+media_player.yamaha_receiver_patio:
+  friendly_name: Patio Speaker
+media_player.yamaha_receiver:
+  friendly_name: Living Room Receiver
+light.boys_room_light:
+  icon: mdi:ceiling-light
+light.tobins_lamp: {}
+switch.bedtime: {}
+device_tracker.life360_tobin_dunn:
+  friendly_name: Dad
+person.keely_dunn:
+  entity_picture: /local/badge-icons/keely.jpeg
+person.tobin_dunn:
+  entity_picture: /local/badge-icons/tobin.jpeg
+person.lilli_ann:
+  entity_picture: /local/badge-icons/lilli.jpeg
+sensor.cc_cc_weather_condition:
+  friendly_name: Conditions
+sensor.cc_cc_precipitation:
+  friendly_name: Precipitation
+switch.game_room_light_switch:
+  area: Game Room
+light.living_room_light:
+  icon: hue:floor-shade
+light.bedroom_lights:
+  icon: hue:table-shade
+light.dining_room_light:
+  icon: hue:ceiling-fair-semiflush
+light.kitchen_light:
+  icon: hue:ceiling-cher-semiflush
+group.boys_room_lights:
+  icon: hue:room-kids
+light.boys_room_lights:
+  icon: hue:room-kids
+light.basement_lights:
+  icon: mdi:lightbulb-group
+light.all_dunn_bar_lights:
+  icon: hue:pendant-cher
+switch.ender3:
+  icon: mdi:printer-3d
+switch.hallway_light:
+  icon: mdi:dome-light
+switch.back_room_light:
+  icon: mdi:dome-light
+switch.back_yard_lights:
+  icon: hue:lightstrip
+switch.outdoor_plug:
+  icon: mdi:power-socket-us
+switch.air_hockey_table:
+  entity_picture: /local/img/device_icons/air-hockey.png
+sensor.esxi_vm_mediacenter_state:
+  entity_picture: /local/img/device_icons/Plex-icon.png
+switch.owl:
+  entity_picture: /local/img/device_icons/owl.png
+switch.touch_screen:
+  entity_picture: /local/img/device_icons/kiosk.png
+switch.patio_plug:
+  icon: hue:socket-us
+switch.marcial_s_room_light:
+  icon: mdi:dome-light
+light.back_room_light_2: {}
+sensor.qbittorrent_down_speed:
+  icon: mdi:download
+sensor.qbittorrent_up_speed:
+  icon: mdi:upload
+light.upstairs_hallway_light:
+  icon: hue:ceiling-flourish
+group.upstairs_living_room_light:
+  icon: hue:ceiling-cher-semiflush
+group.kitchen_light:
+  icon: hue:ceiling-cher-semiflush
+group.dining_room_light:
+  icon: hue:ceiling-fair-semiflush
+group.bedroom_light:
+  icon: hue:table-shade
+group.living_room_light:
+  icon: hue:floor-shade
+light.office_light:
+  icon: hue:bulb-classic
+light.keelys_office_light:
+  icon: hue:bulb-classic
+group.ic_office_lights:
+  icon: hue:recessed-ceiling
+switch.ic_office_switch_one:
+  icon: hue:recessed-ceiling
+switch.ic_office_switch_two:
+  icon: hue:recessed-ceiling
+group.outdoor_lights:
+  icon: hue:wall-econic-lantern-top
+light.outdoor_lights:
+  icon: hue:wall-econic-lantern-top
+group.living_room:
+  icon: hue:room-living
+group.teagans_room:
+  icon: mdi:unicorn-variant
+group.teagans_room_lights:
+  icon: mdi:unicorn-variant
+light.teagans_room_lights:
+  icon: mdi:unicorn-variant
+group.indoor_decorations:
+  icon: mdi:pine-tree
+group.outdoor_decorations:
+  icon: mdi:pine-tree
+group.boys_room:
+  icon: hue:room-kids
+group.laundry_room_lights:
+  icon: hue:room-laundry
+light.toy_room_light:
+  icon: hue:ceiling-flourish
+group.upstairs_hallway_light:
+  icon: hue:ceiling-flourish
+group.dining_room:
+  icon: hue:room-dining
+group.upstairs:
+  icon: mdi:stairs-up
+group.bedroom:
+  icon: hue:room-bedroom
+group.basement_lights:
+  icon: mdi:stairs-down
+group.game_room:
+  icon: mdi:google-controller
+group.outdoors:
+  icon: hue:room-outdoors
+group.all_dunn_bar:
+  icon: mdi:beer
+group.all_dunn_bar_lights:
+  icon: hue:pendant-cher
+group.patio:
+  icon: hue:room-outdoors
+group.bathroom_light:
+  icon: hue:adore-alt
+light.bathroom_light:
+  icon: hue:adore-alt
+group.garage:
+  icon: hue:room-garage
+group.basement:
+  icon: mdi:home-floor-b
+light.garage_light_two:
+  icon: hue:wall-econic-lantern-top
+light.garage_lights:
+  icon: hue:wall-econic-lantern-top
+switch.book_shelf_light:
+  friendly_name: Book Shelf Light
+  icon: hue:lightstrip
+device_tracker.teagans_night_light_two: {}
+light.teagans_night_light_two:
+  icon: hue:single-spot
+light.boys_night_light:
+  icon: hue:single-spot
+light.marcials_light:
+  icon: hue:ceiling-round
+light.upstairs_kitchen_light:
+  icon: hue:ceiling-round
+light.game_room_lamp_one:
+  icon: hue:table-shade
+light.game_room_lamp_two:
+  icon: hue:floor-shade
+switch.outdoor_plug_two:
+  icon: hue:socket-us
+switch.outdoor_plug_four:
+  icon: hue:socket-us
+switch.outdoor_plug_twelve:
+  icon: hue:socket-us
+switch.jack_daniels_light:
+  icon: hue:lightstrip
+switch.under_bar_lights:
+  icon: hue:lightstrip
+switch.bench_light:
+  icon: hue:ensis
+light.hallway_light:
+  icon: hue:ceiling-round
+binary_sensor.front_door_sensor:
+  device_class: door
+binary_sensor.teagans_window_sensor:
+  device_class: window
+binary_sensor.bedroom_window_sensor:
+  device_class: window
+binary_sensor.back_door_open:
+  device_class: door
+binary_sensor.cellar_open_close_sensor:
+  device_class: door
+binary_sensor.back_room_window_sensor_one:
+  device_class: window
+switch.bedroom_light:
+  icon: mdi:light-switch
+group.upstairs_kitchen_light:
+  icon: hue:ceiling-round
+group.upstairs_bathroom_light:
+  icon: hue:adore-alt
+light.upstairs_hallway_bulb_one:
+  icon: hue:ceiling-flourish

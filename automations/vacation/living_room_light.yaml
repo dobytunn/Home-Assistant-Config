@@ -1,0 +1,15 @@
+id: '1599528072988'
+alias: Vacation Living Room Light
+description: ''
+trigger:
+- entity_id: sensor.vacation_living_room_light
+  platform: state
+condition:
+- condition: state
+  entity_id: input_boolean.vacation_mode
+  state: 'on'
+action:
+- data: {}
+  entity_id: light.living_room_light
+  service: light.toggle
+mode: single

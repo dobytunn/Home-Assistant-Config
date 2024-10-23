@@ -1,0 +1,43 @@
+{
+    "title": "Hubspace",
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "username": "Username",
+                    "password": "Password",
+                    "timeout": "timeout"
+                },
+                "data_description": {
+                    "username": "Username",
+                    "password": "Timeout in milliseconds for the connection. (Default: 10000)"
+                }
+            }
+        },
+        "error": {
+            "cannot_connect": "Connection timed out when reaching the server.",
+            "invalid_auth": "Unable to authenticate with the provided credentials",
+            "unknown": "Unknown error occurred. Please review to the logs"
+        }
+    },
+    "services": {
+        "send_command": {
+            "name": "Send Command",
+            "description": "Sends a custom hubspace API command.",
+            "fields": {
+                "value": {
+                    "name": "Value",
+                    "description": "The value you want to send"
+                },
+                "function_class": {
+                    "name": "Function Class",
+                    "description": "functionClass you want to send"
+                },
+                "function_instance": {
+                    "name": "Function Instance",
+                    "description": "functionInstance you want to send"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+utility_meter:
+  energy_daily:
+    source: sensor.energy_spent
+    cycle: daily
+    tariffs:
+      - standard

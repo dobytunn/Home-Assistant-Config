@@ -1,0 +1,50 @@
+Title: Dunn Home
+order:
+  - item: calendar
+    hide: true
+  - item: visual studio code
+    bottom: true
+  - item: HACS
+    bottom: true
+  - item: Map
+    hide: true
+  - item: History
+    hide: true
+  - item: Media Browser
+    hide: true
+exceptions:
+  - user: gideon
+    base_order: true
+    order:
+      - item: developer tools
+        hide: true
+      - item: history
+        hide: true
+      - item: logbook
+        hide: true
+      - item: Server Controls
+        hide: true
+      - item: MacBook
+        hide: true
+      - item: dev
+        hide: true
+      - item: security
+        hide: true
+      - item: tobin's dashboard
+        hide: true
+      - item: energy
+        hide: true
+      - item: map
+        hide: true
+      - item: logbook
+        hide: true
+      - item: history
+        hide: true
+      - item: alarmo
+        hide: true
+      - item: Supervisor
+        hide: true
+      - item: calendar
+        hide: true
+      - item: overview
+        hide: true

@@ -1,0 +1,5516 @@
+- id: '1600209305300'
+  alias: Start School Time
+  description: ''
+  trigger:
+  - at: 08:30:00
+    platform: time
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  action:
+  - data: {}
+    service: input_boolean.turn_on
+    entity_id: input_boolean.school_time
+  mode: single
+- id: '1600209480421'
+  alias: Stop School Time
+  description: ''
+  trigger:
+  - at: '15:55:00'
+    platform: time
+  condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  action:
+  - data: {}
+    service: input_boolean.turn_off
+    entity_id: input_boolean.school_time
+  mode: single
+- id: '1603028988138'
+  alias: Sunset
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -00:10:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: d8a016ed6a344bb8d45594cd41fbd413
+    entity_id: bb24d7d5634f2c7da9098c57c08ebf1d
+    domain: light
+  - type: turn_on
+    device_id: 4809ea10caf2d54f400cd35905d64474
+    entity_id: 64c756e1a2596513d1accdd64ecea04c
+    domain: light
+  - type: turn_on
+    device_id: b648edfa669a5ea864bd292f38462b07
+    entity_id: light.house_light_one
+    domain: light
+    brightness_pct: 100
+  - type: turn_on
+    device_id: 15ee437678c77bf3ef825538effc9134
+    entity_id: light.house_light_two
+    domain: light
+    brightness_pct: 100
+  - type: turn_on
+    device_id: 3a5bd0fdcea8c2eaadec060ca4c303a9
+    entity_id: light.house_light_three
+    domain: light
+    brightness_pct: 100
+  - type: turn_on
+    device_id: 57608743bb4dc0c3a1ecc4a380456005
+    entity_id: light.house_light_four
+    domain: light
+    brightness_pct: 100
+  - type: turn_on
+    device_id: aed8fe234efb0ada87f680c4b606c82c
+    entity_id: light.house_light_five
+    domain: light
+    brightness_pct: 100
+  - type: turn_on
+    device_id: 11c75f782f74e024c2ba4206982a9a70
+    entity_id: light.house_light_six
+    domain: light
+  - type: turn_on
+    device_id: 585b3b92417dbc0352f34acdcfb37eec
+    entity_id: light.house_light_seven
+    domain: light
+  - type: turn_on
+    device_id: b4ccc5497f0fe66c0bb27ced33e7483d
+    entity_id: light.back_door_light
+    domain: light
+    brightness_pct: 100
+  - type: turn_on
+    device_id: 1bf1b6aa7cebe75769361360d31e34ee
+    entity_id: f078cfda776cbfa9b1d365ac61bc7be3
+    domain: switch
+  - service: homeassistant.turn_on
+    target:
+      entity_id: input_boolean.dining_room_top_plug
+    data: {}
+  mode: single
+- id: '1604242385873'
+  alias: Holiday Lights Off (Halloween)
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition:
+  - condition: state
+    entity_id: input_select.holiday_season
+    state: Halloween
+  action:
+  - type: turn_off
+    device_id: 7e06e91ef94c8f056b4e71887e44290b
+    entity_id: e6cf8814d79e869863352839e6fd7bf2
+    domain: switch
+  - type: turn_off
+    device_id: 7e06e91ef94c8f056b4e71887e44290b
+    entity_id: c146bd0bab3ffd0a24bb7b828aed6eaa
+    domain: switch
+  - type: turn_off
+    device_id: 25329b7610513967ea73ec5ddf5ed579
+    entity_id: 9c21a3090b8aa48dc9ea47856fee8967
+    domain: switch
+  - type: turn_off
+    device_id: 25329b7610513967ea73ec5ddf5ed579
+    entity_id: 1bdcedeb120d315208d7d53face7e166
+    domain: switch
+  - type: turn_off
+    device_id: 25329b7610513967ea73ec5ddf5ed579
+    entity_id: b965bec622eccb7914c852e2b9c4f843
+    domain: switch
+  - type: turn_off
+    device_id: 25329b7610513967ea73ec5ddf5ed579
+    entity_id: fd682ce4b0fc8cbb563796c13f4539f4
+    domain: switch
+  - type: turn_off
+    device_id: f9549f4aa4bda5d3c957ac4024f6d889
+    entity_id: 36e9985c401824c2c0081ba1dd5d06d6
+    domain: switch
+  - type: turn_off
+    device_id: f9549f4aa4bda5d3c957ac4024f6d889
+    entity_id: 62c205e77f554a8f85a47e7b2f3ac625
+    domain: switch
+  - type: turn_off
+    device_id: f9549f4aa4bda5d3c957ac4024f6d889
+    entity_id: ce761c3516814d79b21ed51d9729e6b0
+    domain: switch
+  - type: turn_off
+    device_id: f9549f4aa4bda5d3c957ac4024f6d889
+    entity_id: 17682a824458a7c8e1c932e6e2cee913
+    domain: switch
+  - type: turn_off
+    device_id: 23a7419de1a5ffc98b7a5a8b244765fa
+    entity_id: 4937f2da43ccfe6b09dfb0c7bdff2356
+    domain: switch
+  - type: turn_off
+    device_id: 2cdaf4678cfb815869b06b2743ecb810
+    entity_id: 087164b41d7e8eb7cf7ddc1fd80d3ce9
+    domain: switch
+  - type: turn_off
+    device_id: cde20a7ab87671368844e1f79ff7f4d8
+    entity_id: 93f7b44692c5c23a7d71aac7eb2426d8
+    domain: switch
+  mode: single
+- id: '1604242571448'
+  alias: Holiday Lights On
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.holiday_lights
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: homeassistant.turn_on
+    target:
+      entity_id: group.indoor_decorations
+    data: {}
+  - service: homeassistant.turn_on
+    data: {}
+    target:
+      entity_id: group.outdoor_decorations
+  mode: single
+- id: '1604242712164'
+  alias: Holiday Lights Off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.holiday_lights
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: homeassistant.turn_off
+    target:
+      entity_id: group.indoor_decorations
+    data: {}
+  - service: homeassistant.turn_off
+    data: {}
+    target:
+      entity_id: switch.outdoor_decoractions
+  mode: single
+- id: '1604242830541'
+  alias: Indoor Decorations On
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.indoor_decorations
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: homeassistant.turn_on
+    data: {}
+    target:
+      entity_id: group.indoor_decorations
+  mode: single
+- id: '1604242873512'
+  alias: Indoor Decorations Off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.indoor_decorations
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: homeassistant.turn_off
+    data: {}
+    target:
+      entity_id: group.indoor_decorations
+  mode: single
+- id: '1604244499421'
+  alias: Outdoor Decorations On
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.outdoor_decorations
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - service: homeassistant.turn_on
+    data: {}
+    target:
+      entity_id: switch.outdoor_decoractions
+  mode: single
+- id: '1604244554906'
+  alias: Outdoor Decorations Off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.outdoor_decorations
+    from: 'on'
+    to: 'off'
+  condition: []
+  action:
+  - service: homeassistant.turn_off
+    data: {}
+    target:
+      entity_id: switch.outdoor_decoractions
+  mode: single
+- id: '1618102213516'
+  alias: Alarm Siren Alert On
+  description: Turns on siren
+  trigger:
+  - platform: state
+    entity_id: input_boolean.alarm_siren
+    to: 'on'
+  condition: []
+  action:
+  - service: button.press
+    data: {}
+    target:
+      entity_id: button.front_doorbell_chime_trigger_alarm
+  mode: single
+- id: '1619228216842'
+  alias: Security Garage Door Left Open
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: lock.back_door
+    to: locked
+  condition:
+  - condition: state
+    entity_id: cover.garage_door
+    state: open
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Garage door is still open!
+      title: '!!!Security Alert!!!'
+      data:
+        push:
+          category: security_notification
+  - service: notify.mobile_app_keelys_iphone
+    data:
+      message: Garage door is still open!
+      title: '!!!Security Alert!!!'
+      data:
+        push:
+          category: security_notification
+  mode: single
+- id: '1622161416485'
+  alias: Alarmo Auto Disarm
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.family
+    to: home
+  condition: []
+  action:
+  - device_id: 43bdc69711100185609d2447247354e4
+    domain: alarm_control_panel
+    entity_id: alarm_control_panel.alarmo
+    type: disarm
+    code: '9885'
+  - service: alarm_control_panel.alarm_disarm
+    target:
+      entity_id: alarm_control_panel.alexa_guard_eeea5
+    data: {}
+  mode: single
+- id: '1625965050514'
+  alias: Front Doorbell Mobile Alert
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.front_door_doorbell
+    to: 'on'
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: input_select.home_mode
+      state: Vacation
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Someone is at the front door.
+      title: Front Doorbell
+  mode: single
+- id: '1625965278148'
+  alias: Back Doorbell Mobile Alert
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.back_door_doorbell
+    to: 'on'
+  condition:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: input_select.home_mode
+      state: Vacation
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Someone is at the back door.
+      title: Back Doorbell
+      data:
+        url: /back-door/0
+        push:
+          category: back_doorbell
+        entity_id: camera.blueiris_back_door
+  mode: single
+- id: '1631298564563'
+  alias: IC Office Cleaning
+  description: Vacuum the office nightly.
+  trigger:
+  - platform: time
+    at: '20:00:00'
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: homeassistant.turn_on
+    target:
+      entity_id: vacuum.mary
+    data: {}
+  mode: single
+- id: '1631379419910'
+  alias: Garage Door Actionable Close
+  description: ''
+  trigger:
+  - platform: event
+    event_type: ios.notification_action_fired
+    event_data:
+      actionName: CLOSE_GARAGE_DOOR
+    context:
+      user_id:
+      - 59ad94d32b3b47559706b19e063b4d5e
+  condition: []
+  action:
+  - service: cover.close_cover
+    target:
+      entity_id: cover.garage_door
+  mode: single
+- id: '1631462702065'
+  alias: Gannon If Task Complete, then Add 1 Point
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.gannon_make_bed
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.gannon_feed_dogs
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.gannon_feed_cat
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.gannon_home_work
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.gannon_set_table
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.gannon_clear_table
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.gannon_put_clothes_away
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.gannon_clean_dishes
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.gannon_put_dishes_away
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.gannon_brush_teeth
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.gannon_potty
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.gannon_clean_bedroom
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.gannon_clean_upstairs
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.gannon_trash
+    to: 'on'
+  condition: []
+  action:
+  - service: script.add_point_gc
+  mode: single
+- id: '1631462806702'
+  alias: Kagan If Task Complete, then Add 1 Point
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.kagan_make_bed
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.kagan_feed_dogs
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.kagan_feed_cat
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.kagan_home_work
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.kagan_set_table
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.kagan_clear_table
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.kagan_put_clothes_away
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.kagan_clean_dishes
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.kagan_put_dishes_away
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.kagan_brush_teeth
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.kagan_potty
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.kagan_clean_bedroom
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.kagan_clean_upstairs
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.kagan_trash
+    to: 'on'
+  condition: []
+  action:
+  - service: script.add_point_kc
+  mode: single
+- id: '1631463022847'
+  alias: Teagan If Task Complete, then Add 1 Point
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.teagan_eat_breakfast
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_rinse_bowl
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_take_vitamins
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_get_dressed
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_put_dirty_clothes_in_hamper
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_morning_brush_teeth
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_morning_brush_hair
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_pack_snack
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_fill_and_pack_water_bottle
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_put_on_shoes
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_hang_up_backpack_coat
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_put_away_shoes
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_give_mom_folder
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_do_homework_reading
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_do_1_chore_from_list
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_help_with_dinner
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_clean_up_room
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_put_on_pj_s
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_evening_brush_teeth
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_put_ipad_on_charger
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_pick_clothes_for_next_day
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagn_make_bed
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_put_clothes_away
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_brush_teeth
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_potty
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_clean_bedroom
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_clean_upstairs
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_clean_dishes
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_put_dishes_away
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_clear_table
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_trash
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_make_bed
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.teagan_set_table
+    to: 'on'
+  condition: []
+  action:
+  - service: script.add_point_tc
+    data: {}
+  mode: single
+- id: '1631464213663'
+  alias: Reset Choirs Daily - Gannon
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.gannon_make_bed
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.gannon_feed_dogs
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.gannon_feed_cat
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.gannon_home_work
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.gannon_set_table
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.gannon_clear_table
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.gannon_put_clothes_away
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.gannon_clean_dishes
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.gannon_put_dishes_away
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.gannon_brush_teeth
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.gannon_potty
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.gannon_clean_upstairs
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.gannon_clean_bedroom
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.gannon_trash
+  mode: single
+- id: '1631464213665'
+  alias: Reset Choirs Daily - Kagan
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.kagan_make_bed
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.kagan_feed_dogs
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.kagan_feed_cat
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.kagan_home_work
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.kagan_set_table
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.kagan_clear_table
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.kagan_put_clothes_away
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.kagan_clean_dishes
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.kagan_put_dishes_away
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.kagan_brush_teeth
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.kagan_potty
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.kagan_clean_upstairs
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.kagan_clean_bedroom
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.kagan_trash
+  mode: single
+- id: '1631464213664'
+  alias: Reset Choirs Daily - Teagan
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_make_bed
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_put_clothes_away
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_brush_teeth
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_potty
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_clean_upstairs
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_clean_bedroom
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_clean_dishes
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_put_dishes_away
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_set_table
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_clear_table
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_eat_breakfast
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_rinse_bowl
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_take_vitamins
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_get_dressed
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_put_dirty_clothes_in_hamper
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_morning_brush_teeth
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_morning_brush_hair
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_pack_snack
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_fill_and_pack_water_bottle
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_put_on_shoes
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_hang_up_backpack_coat
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_put_away_shoes
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_give_mom_folder
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_do_homework_reading
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_do_1_chore_from_list
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_help_with_dinner
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_clean_up_room
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_put_on_pj_s
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_evening_brush_teeth
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_put_ipad_on_charger
+    data: {}
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.teagan_pick_clothes_for_next_day
+    data: {}
+  mode: single
+- id: '1631465860146'
+  alias: Reset Chore Points Weekly
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition:
+  - condition: time
+    weekday:
+    - sat
+  action:
+  - service: counter.reset
+    target:
+      entity_id:
+      - counter.gannon_chore_counter
+      - counter.kagan_chore_counter
+      - counter.teagan_chore_counter
+  mode: single
+- id: '1631475969629'
+  alias: Gannon Allowance Goal Notification
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: counter.gannon_chore_counter
+    above: '24'
+  condition: []
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Gannon Allowance Goal Reached
+      title: Allowance Goal!!!
+  - service: notify.mobile_app_keelys_iphone
+    data:
+      message: Gannon Allowance Goal Reached
+      title: Allowance Goal!!!
+  mode: single
+- id: '1631476013906'
+  alias: Kagan Allowance Goal Notification
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: counter.kagan_chore_counter
+    above: '24'
+  condition: []
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Kagan Allowance Goal Reached
+      title: Allowance Goal!!!
+  - service: notify.mobile_app_keelys_iphone
+    data:
+      message: Kagan Allowance Goal Reached
+      title: Allowance Goal!!!
+  mode: single
+- id: '1631476085580'
+  alias: Teagan Allowance Goal Notification
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: counter.teagan_chore_counter
+    above: '7'
+  condition: []
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Teagan Allowance Goal Reached
+      title: Allowance Goal!!!
+  - service: notify.mobile_app_keelys_iphone
+    data:
+      message: Teagan Allowance Goal Reached
+      title: Allowance Goal!!!
+  mode: single
+- id: '163158495987'
+  alias: Marcial If Task Un-Completed, then Remove 1 Point
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.marcial_make_bed
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.marcial_feed_dogs
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.marcial_feed_cat
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.marcial_home_work
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.marcial_set_table
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.marcial_clear_table
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.marcial_put_clothes_away
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.marcial_clean_dishes
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.marcial_put_dishes_away
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.marcial_clean_bedroom
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.marcial_clean_upstairs
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.marcial_trash
+    to: offf
+  condition:
+  - condition: not
+    conditions:
+    - condition: time
+      after: '23:57:00'
+      before: 00:05:00
+  action:
+  - service: script.remove_point_mc
+- id: '1631584955399'
+  alias: Gannon If Task Un-Completed, then Remove 1 Point
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.gannon_make_bed
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.gannon_feed_dogs
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.gannon_feed_cat
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.gannon_home_work
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.gannon_set_table
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.gannon_clear_table
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.gannon_put_clothes_away
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.gannon_clean_dishes
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.gannon_put_dishes_away
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.gannon_brush_teeth
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.gannon_potty
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.gannon_clean_bedroom
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.gannon_clean_upstairs
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.gannon_trash
+    to: offf
+  condition:
+  - condition: not
+    conditions:
+    - condition: time
+      after: '23:57:00'
+      before: 00:05:00
+  action:
+  - service: script.remove_point_gc
+  mode: single
+- id: '1631585071926'
+  alias: Kagan If Task Un-Completed, then Remove 1 Point
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.kagan_make_bed
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.kagan_feed_dogs
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.kagan_feed_cat
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.kagan_home_work
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.kagan_set_table
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.kagan_clear_table
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.kagan_put_clothes_away
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.kagan_clean_dishes
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.kagan_put_dishes_away
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.kagan_brush_teeth
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.kagan_potty
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.kagan_clean_bedroom
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.kagan_clean_upstairs
+    to: 'off'
+  - platform: state
+    entity_id: input_boolean.kagan_trash
+    to: 'off'
+  condition:
+  - condition: not
+    conditions:
+    - condition: time
+      after: '23:57:00'
+      before: 00:05:00
+  action:
+  - service: script.remove_point_kc
+  mode: single
+- id: '1631985741758'
+  alias: Marcial If Task Complete, then Add 1 Point
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.marcial_make_bed
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.marcial_feed_dogs
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.marcial_feed_cat
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.marcial_home_work
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.marcial_set_table
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.marcial_clear_table
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.marcial_put_clothes_away
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.marcial_clean_dishes
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.marcial_put_dishes_away
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.marcial_clean_bedroom
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.marcial_clean_upstairs
+    to: 'on'
+  - platform: state
+    entity_id: input_boolean.marcial_trash
+    to: 'on'
+  condition: []
+  action:
+  - service: script.add_point_mc
+  mode: single
+- id: '1631985938537'
+  alias: Reset Choirs Daily - Marcial
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.marcial_make_bed
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.marcial_feed_dogs
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.marcial_feed_cat
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.marcial_home_work
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.marcial_set_table
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.marcial_clear_table
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.marcial_put_clothes_away
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.marcial_clean_dishes
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.marcial_put_dishes_away
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.marcial_clean_upstairs
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.marcial_clean_bedroom
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.marcial_trash
+  mode: single
+- id: '1632100245982'
+  alias: Gannon Trash Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.gannon_trash
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.gannon_trash
+  mode: single
+- id: '1632100245985'
+  alias: Gannon Clean Bedroom Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.gannon_clean_bedromm
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.gannon_clean_bedroom
+  mode: single
+- id: '1632100245986'
+  alias: Gannon Clean Upstairs Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.gannon_clean_upstairs
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.gannon_clean_upstairs
+  mode: single
+- id: '1632100245987'
+  alias: Gannon Clear Table Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.gannon_clear_table
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.gannon_clear_table
+  mode: single
+- id: '1632100245988'
+  alias: Gannon Feed Cat Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.gannon_feed_cat
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.gannon_feed_cat
+  mode: single
+- id: '1632100245989'
+  alias: Gannon Feed Dog Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.gannon_feed_dog
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.gannon_feed_dog
+  mode: single
+- id: '1632100245990'
+  alias: Gannon Put Clothes Away Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.gannon_put_clothes_away
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.gannon_put_clothes_away
+  mode: single
+- id: '1632100245991'
+  alias: Gannon Put Dishes Away Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.gannon_put_dishes_away
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.gannon_put_dishes_away
+  mode: single
+- id: '1632100245992'
+  alias: Gannon Set Table Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.gannon_set_table
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.gannon_set_tabel
+  mode: single
+- id: '1632100245983'
+  alias: Gannon Make Bed Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.gannon_make_bed
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.gannon_make_bed
+  mode: single
+- id: '1632100245993'
+  alias: Gannon Make Clean Dishes Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.gannon_clean_dishes
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.gannon_clean_dishes
+  mode: single
+- id: '1632100245984'
+  alias: Gannon Home Work Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.gannon_home_work
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.gannon_home_work
+  mode: single
+- id: '1632100245996'
+  alias: Kagan Clean Bedroom Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.kagan_clean_bedroom
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.kagan_clean_bedroom
+  mode: single
+- id: '1632100245997'
+  alias: Kagan Clean Dishes Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.kagan_clean_dishes
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.kagan_clean_dishes
+  mode: single
+- id: '1632100245998'
+  alias: Kagan Clean Upstairs Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.kagan_upstairs_bedroom
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.kagan_upstairs_bedroom
+  mode: single
+- id: '1632100245999'
+  alias: Kagan Clear Table Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.kagan_clear_table
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.kagan_clear_table
+  mode: single
+- id: '163210024510000'
+  alias: Kagan Feed Cat Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.kagan_feed_cat
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.kagan_feed_cat
+  mode: single
+- id: '16321002451001'
+  alias: Kagan Feed Dogs Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.kagan_feed_dogs
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.kagan_feed_dog
+  mode: single
+- id: '16321002451002'
+  alias: Kagan Home Work Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.kagan_home_work
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.kagan_home_work
+  mode: single
+- id: '16321002451003'
+  alias: Kagan Make Bed Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.kagan_make_bed
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.kagan_make_bed
+  mode: single
+- id: '16321002451004'
+  alias: Kagan Put Clothes Away Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.kagan_put_clothes_away
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.kagan_put_clothes_away
+  mode: single
+- id: '16321002451005'
+  alias: Kagan Put Dishes Away Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.kagan_put_dishes_away
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.kagan_put_dishes_away
+  mode: single
+- id: '16321002451006'
+  alias: Kagan Set Table Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.kagan_set_table
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.kagan_set_table
+  mode: single
+- id: '16321002451007'
+  alias: Kagan Trash Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.kagan_trash
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.kagan_trash
+  mode: single
+- id: '16321002451008'
+  alias: Teagan Clean Bedroom Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.teagan_clean_bedroom
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.teagan_clean_bedroom
+  mode: single
+- id: '16321002451009'
+  alias: Teagan Clean Dishes Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.teagan_clean_dishes
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.teagan_clean_dishes
+  mode: single
+- id: '16321002451010'
+  alias: Teagan Clean Upstairs Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.teagan_clean_upstairs
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.teagan_clean_upstairs
+  mode: single
+- id: '163210024510010'
+  alias: Teagan Make Bed Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.teagan_make_bed
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.teagan_make_bed
+  mode: single
+- id: '163210024510011'
+  alias: Teagan Put Clothes Away Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.teagan_put_clothes_away
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.teagan_put_clothes_away
+  mode: single
+- id: '163210024510012'
+  alias: Teagan Put Dishes Away Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.teagan_put_dishes_away
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.teagan_put_dishes_away
+  mode: single
+- id: '163210024510013'
+  alias: Teagan Set Table Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.teagan_set_table
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.teagan_set_table
+  mode: single
+- id: '163210024510014'
+  alias: Teagan trash Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_boolean.teagan_trash
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    target:
+      entity_id: counter.teagan_trash
+  mode: single
+- id: '1635083548100'
+  alias: Server Down Notification
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.esxi_vm_mediacenter_state
+    to: 'off'
+  - platform: state
+    entity_id: sensor.esxi_vm_naboo_dc1_state
+    to: 'off'
+  - platform: state
+    entity_id: sensor.esxi_vm_hosnian_prime_state
+    to: 'off'
+  - platform: state
+    entity_id: sensor.esxi_vm_isb_state
+    to: 'off'
+  - platform: state
+    entity_id: sensor.esxi_vm_tinycam_pro_state
+    to: 'off'
+  - platform: state
+    entity_id: sensor.esxi_vm_bitwarden_state
+    to: 'off'
+  - platform: state
+    entity_id: sensor.esxi_vm_vader_state
+    to: 'off'
+  - platform: state
+    entity_id: sensor.esxi_vm_inquisitor_state
+    to: 'off'
+  condition: []
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Server Down
+      title: Server Uptime Notification
+  mode: single
+- id: '1635727743546'
+  alias: Kagan Devive Charge Reminder
+  description: ''
+  trigger:
+  - platform: time
+    at: '20:15:00'
+  condition:
+  - condition: state
+    entity_id: sensor.kagan_s_ipad_battery_state
+    state: NotCharging
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Kagan's iPad is Not Charging
+      title: Device Charge Alert
+  mode: single
+- id: '1635727806449'
+  alias: Teagan Devive Charge Reminder
+  description: ''
+  trigger:
+  - platform: time
+    at: '20:15:00'
+  condition:
+  - condition: state
+    entity_id: sensor.teagans_ipad_battery_state
+    state: NotCharging
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Teagan's iPad is Not Charging
+      title: Device Charge Alert
+  mode: single
+- id: '1636856239021'
+  alias: Holiday Lights Off (Christmas)
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:00:00
+  condition:
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: sensor.next_holiday
+      state: Christmas Eve (Observed)
+    - condition: state
+      entity_id: sensor.next_holiday
+      state: Christmas Day (Observed), Christmas Eve
+    - condition: state
+      entity_id: sensor.next_holiday
+      state: Christmas Day
+  action:
+  - service: homeassistant.turn_off
+    target:
+      entity_id: group.indoor_decorations
+    data: {}
+  - service: homeassistant.turn_off
+    data: {}
+    target:
+      entity_id: switch.outdoor_decoractions
+  mode: single
+- id: '1636856268612'
+  alias: Holiday Lights On (Chirstmas)
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -00:15:00
+  condition:
+  - condition: state
+    entity_id: input_select.holiday_season
+    state: Christmas
+  - condition: state
+    entity_id: sensor.next_holiday
+    state: Christmas Eve (Observed)
+  - condition: state
+    entity_id: sensor.next_holiday
+    state: Christmas Day (Observed), Christmas Eve
+  - condition: state
+    entity_id: sensor.next_holiday
+    state: Christmas Day
+  action:
+  - service: homeassistant.turn_on
+    target:
+      entity_id: group.indoor_decorations
+  - service: homeassistant.turn_on
+    target:
+      entity_id: group.outdoor_plugs
+  mode: single
+- id: '1636856791426'
+  alias: Holiday Lights Off (Thanksgiving)
+  description: ''
+  trigger:
+  - platform: time
+    at: '21:00:00'
+  condition:
+  - condition: state
+    entity_id: input_select.holiday_season
+    state: Thanksgiving
+  action:
+  - type: turn_off
+    device_id: 25329b7610513967ea73ec5ddf5ed579
+    entity_id: switch.outdoor_plug_one
+    domain: switch
+  - type: turn_off
+    device_id: 25329b7610513967ea73ec5ddf5ed579
+    entity_id: switch.outdoor_plug_two
+    domain: switch
+  - type: turn_off
+    device_id: 8ecee381c90a35d77a9e1a5a96b77e9f
+    entity_id: switch.kitchen_plug_one
+    domain: switch
+  mode: single
+- id: '1636856852549'
+  alias: Holiday Lights On (Thanksgiving)
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -02:00:00
+  condition:
+  - condition: state
+    entity_id: input_select.holiday_season
+    state: Thanksgiving
+  action:
+  - type: turn_on
+    device_id: 25329b7610513967ea73ec5ddf5ed579
+    entity_id: fd682ce4b0fc8cbb563796c13f4539f4
+    domain: switch
+  mode: single
+- id: '1637639709386'
+  alias: Sleeping On
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: device_tracker.keelys_iphone
+    attribute: battery_status
+    to: charging
+  condition: []
+  action:
+  - service: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.sleeping
+  mode: single
+- id: '1639761437047'
+  alias: Bitwarden Down
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.esxi_vm_bitwarden_state
+    to: 'off'
+  condition: []
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Bitwarden server is offline
+      title: '!!! Server Down !!!'
+  mode: single
+- id: '1639761507482'
+  alias: Bitwarden Up
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.esxi_vm_bitwarden_state
+    to: running
+  condition: []
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Bitwarden server is online
+      title: '!!! Server Up !!!'
+  mode: single
+- id: '1639938487637'
+  alias: Outdoor Lights (Auto Off)
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: +00:15:00
+  condition: []
+  action:
+  - service: homeassistant.turn_off
+    target:
+      entity_id: group.outdoor_lights
+  mode: single
+- id: '1641241624503'
+  alias: Gannon Left School
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - person.gannon_dunn
+    from: Farmington Elem
+  condition: []
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Gannon left school
+      title: Gannon Location Update
+  - service: notify.mobile_app_keelys_iphone
+    data:
+      message: Gannon left school
+      title: Gannon Location Update
+  mode: single
+- id: '1641499961570'
+  alias: Gannon at Bus Stop
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - person.gannon_dunn
+    to: Gannon's Bus Stop
+  condition:
+  - condition: time
+    before: '17:00:00'
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    after: 06:00:00
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      title: Gannon Location Update
+      message: Gannon is at the bus stop
+  - service: notify.mobile_app_keelys_iphone
+    data:
+      message: Gannon is at the bus stop
+      title: Gannon Location Update
+  mode: single
+- id: '1645844857909'
+  alias: Upstairs Landing Light
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 378e5193c2cb2d8dd3ff852245bbfef0
+    entity_id: binary_sensor.upstairs_landing_motion_sensor_motion
+    domain: binary_sensor
+    id: Motion
+  - type: no_motion
+    platform: device
+    device_id: 378e5193c2cb2d8dd3ff852245bbfef0
+    entity_id: binary_sensor.upstairs_landing_motion_sensor_motion
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+    id: No Motion
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Motion
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      - condition: time
+        after: 07:20:00
+        before: '20:30:00'
+      sequence:
+      - type: turn_on
+        device_id: 93bea657372f749a914324e732564664
+        entity_id: light.upstairs_landing_light
+        domain: light
+        brightness_pct: 100
+    - conditions:
+      - condition: trigger
+        id: No Motion
+      sequence:
+      - type: turn_off
+        device_id: 93bea657372f749a914324e732564664
+        entity_id: light.upstairs_landing_light
+        domain: light
+    - conditions:
+      - condition: trigger
+        id: Motion
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      - condition: time
+        after: '20:31:00'
+        before: 07:19:00
+      sequence:
+      - type: turn_on
+        device_id: 93bea657372f749a914324e732564664
+        entity_id: light.upstairs_landing_light
+        domain: light
+        brightness_pct: 19
+      - type: turn_on
+        device_id: 93d91459a50d5271a4b6596e4664816d
+        entity_id: f824aaf1220d1dd1d86332fc16a58766
+        domain: light
+        brightness_pct: 19
+      - type: turn_on
+        device_id: 2526c7d1f587c02f79401fb238aea2fa
+        entity_id: 6df394a9cbd4a9d21c3c2899cf3b3714
+        domain: light
+        brightness_pct: 19
+    default: []
+  mode: single
+- id: '1645888005845'
+  alias: 2nd Floor Climate Control
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.upstairs_motion_sensors
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 30
+    id: Motion Occupied
+  - platform: state
+    entity_id: group.upstairs_occupancy_sensors
+    to: 'on'
+    id: Occupancy On
+  - platform: state
+    entity_id: group.upstairs_occupancy_sensors
+    to: 'off'
+    id: Occupancy Off
+  - platform: state
+    entity_id: group.upstairs_motion_sensors
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+    id: Motion Off
+  - platform: time
+    at: '20:00:00'
+    id: Sleep Start
+  - platform: time
+    at: 07:00:00
+    id: Mornings Start
+  - platform: state
+    entity_id: input_select.home_mode
+    to: not_home
+    id: Family Away
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Occupancy On
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+        - condition: time
+          after: 09:00:00
+          before: '20:59:00'
+          weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      sequence:
+      - service: climate.set_preset_mode
+        data:
+          preset_mode: Home
+        target:
+          entity_id: climate.upstairs_thermostat
+    - conditions:
+      - condition: trigger
+        id: Occupancy On
+      - condition: time
+        after: 07:00:00
+        before: '20:59:00'
+        weekday:
+        - sat
+        - sun
+      sequence:
+      - device_id: e5f386dfb0f09bcb4a9cb0e429512067
+        domain: climate
+        entity_id: climate.upstairs_thermostat
+        type: set_preset_mode
+        preset_mode: Home
+    - conditions:
+      - condition: trigger
+        id: Occupancy Off
+      - condition: time
+        after: 08:00:00
+        before: '20:59:00'
+      sequence:
+      - service: climate.set_preset_mode
+        data:
+          preset_mode: Away
+        target:
+          entity_id: climate.upstairs_thermostat
+    - conditions:
+      - condition: trigger
+        id: Sleep Start
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      sequence:
+      - service: climate.set_preset_mode
+        data:
+          preset_mode: Sleep
+        target:
+          entity_id: climate.upstairs_thermostat
+    - conditions:
+      - condition: trigger
+        id: Mornings Start
+      - condition: time
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+        before: 00:00:00
+        after: 00:00:00
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      sequence:
+      - service: climate.set_preset_mode
+        data:
+          preset_mode: Morning
+        target:
+          entity_id: climate.upstairs_thermostat
+    - conditions:
+      - condition: trigger
+        id: Family Away
+      sequence:
+      - service: climate.set_preset_mode
+        data:
+          preset_mode: Away
+        target:
+          entity_id: climate.upstairs_thermostat
+    default: []
+  mode: single
+- id: '1645911315016'
+  alias: Back Door Lock/Unlock
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - person.tobin_dunn
+    id: Tobin Not Home
+    from: home
+    to: not_home
+  - platform: state
+    entity_id:
+    - person.tobin_dunn
+    to: home
+    id: Tobin Home
+  - platform: state
+    entity_id:
+    - person.keely_dunn
+    to: not_home
+    id: Keely Not Home
+    from: home
+  - platform: state
+    entity_id:
+    - person.keely_dunn
+    to: home
+    id: Keely Home
+  - platform: state
+    entity_id:
+    - person.gannon_dunn
+    to: not_home
+    id: Gannon Not Home
+    from: home
+  - platform: state
+    entity_id:
+    - person.gannon_dunn
+    to: home
+    id: Gannon Home
+  - platform: state
+    entity_id:
+    - person.lilli_ann_whittker_dunn
+    to: not_home
+    id: Lilli Not Home
+    from: Home
+  - platform: state
+    entity_id:
+    - person.lilli_ann_whittker_dunn
+    to: Home
+    id: Lilli Home
+  - platform: state
+    entity_id:
+    - person.kagan_dunn
+    to: not_home
+    id: Kagan Not Home
+    from: home
+  - platform: state
+    entity_id:
+    - person.kagan_dunn
+    to: home
+    id: Kagan Home
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Tobin Not Home
+      sequence:
+      - device_id: 48b96e94d28d9157f5761ab4d293d69c
+        domain: lock
+        entity_id: 6b04d111e4e06322399283d629379e64
+        type: lock
+    - conditions:
+      - condition: trigger
+        id: Tobin Home
+      sequence:
+      - device_id: 48b96e94d28d9157f5761ab4d293d69c
+        domain: lock
+        entity_id: 6b04d111e4e06322399283d629379e64
+        type: unlock
+    - conditions:
+      - condition: trigger
+        id:
+        - Keely Not Home
+      sequence:
+      - device_id: 48b96e94d28d9157f5761ab4d293d69c
+        domain: lock
+        entity_id: 6b04d111e4e06322399283d629379e64
+        type: lock
+    - conditions:
+      - condition: trigger
+        id: Keely Home
+      sequence:
+      - device_id: 48b96e94d28d9157f5761ab4d293d69c
+        domain: lock
+        entity_id: 6b04d111e4e06322399283d629379e64
+        type: unlock
+    - conditions:
+      - condition: trigger
+        id: Gannon Not Home
+      sequence:
+      - device_id: 48b96e94d28d9157f5761ab4d293d69c
+        domain: lock
+        entity_id: 6b04d111e4e06322399283d629379e64
+        type: lock
+    - conditions:
+      - condition: trigger
+        id: Gannon Home
+      sequence:
+      - device_id: 48b96e94d28d9157f5761ab4d293d69c
+        domain: lock
+        entity_id: 6b04d111e4e06322399283d629379e64
+        type: unlock
+    - conditions:
+      - condition: trigger
+        id: Lilli Not Home
+      sequence:
+      - device_id: 48b96e94d28d9157f5761ab4d293d69c
+        domain: lock
+        entity_id: 6b04d111e4e06322399283d629379e64
+        type: lock
+    - conditions:
+      - condition: trigger
+        id: Lilli Home
+      sequence:
+      - device_id: 48b96e94d28d9157f5761ab4d293d69c
+        domain: lock
+        entity_id: 6b04d111e4e06322399283d629379e64
+        type: unlock
+    - conditions:
+      - condition: trigger
+        id:
+        - Kagan Not Home
+      sequence:
+      - device_id: 48b96e94d28d9157f5761ab4d293d69c
+        domain: lock
+        entity_id: 6b04d111e4e06322399283d629379e64
+        type: lock
+    - conditions:
+      - condition: trigger
+        id:
+        - Kagan Home
+      sequence:
+      - device_id: 48b96e94d28d9157f5761ab4d293d69c
+        domain: lock
+        entity_id: 6b04d111e4e06322399283d629379e64
+        type: unlock
+    default: []
+  mode: single
+- id: '1645921056488'
+  alias: Basement Stairs Pico
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.basement_landing_motion_sensor_motion
+    id: Motion Detected
+    to: 'on'
+  - platform: state
+    entity_id:
+    - binary_sensor.basement_landing_motion_sensor_motion
+    id: No Motion Detected
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+    to: 'off'
+  - platform: device
+    device_id: 47023711c93b58722e059313d528e072
+    domain: lutron_caseta
+    type: press
+    subtype: 'on'
+    id: Switch Turned On
+  - platform: device
+    device_id: 47023711c93b58722e059313d528e072
+    domain: lutron_caseta
+    type: press
+    subtype: 'off'
+    id: Switch Turned Off
+  - platform: device
+    device_id: 47023711c93b58722e059313d528e072
+    domain: lutron_caseta
+    type: press
+    subtype: stop
+    id: Favorite Pressed
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: time
+        after: 07:30:00
+        before: '22:30:00'
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      sequence:
+      - type: turn_on
+        device_id: e52bfd551c4d0d60fc09bcdb3c5364fb
+        entity_id: d77ae05b2444dcd6dae335488f99aec2
+        domain: light
+        brightness_pct: 100
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: time
+        after: '22:30:00'
+        before: 07:29:00
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      sequence:
+      - type: turn_on
+        device_id: e52bfd551c4d0d60fc09bcdb3c5364fb
+        entity_id: d77ae05b2444dcd6dae335488f99aec2
+        domain: light
+        brightness_pct: 100
+      - type: turn_on
+        device_id: bfc5e45961b0bea253118129b4707cdc
+        entity_id: 481a17fe660e6b401a86548611267948
+        domain: light
+        brightness_pct: 25
+    - conditions:
+      - condition: trigger
+        id: No Motion Detected
+      sequence:
+      - type: turn_off
+        device_id: bfc5e45961b0bea253118129b4707cdc
+        entity_id: 481a17fe660e6b401a86548611267948
+        domain: light
+      - type: turn_off
+        device_id: e52bfd551c4d0d60fc09bcdb3c5364fb
+        entity_id: d77ae05b2444dcd6dae335488f99aec2
+        domain: light
+    - conditions:
+      - condition: trigger
+        id:
+        - Switch Turned On
+      sequence:
+      - type: turn_on
+        device_id: e52bfd551c4d0d60fc09bcdb3c5364fb
+        entity_id: d77ae05b2444dcd6dae335488f99aec2
+        domain: light
+        brightness_pct: 100
+      - type: turn_on
+        device_id: 2566c1adf9f1ee672ec5f38725375564
+        entity_id: 400452fcdfda062f0c80fd0495065b43
+        domain: light
+        brightness_pct: 100
+      - type: turn_on
+        device_id: 87851bf50d9abb5845e2c5b53cfe4042
+        entity_id: 2466fa058f09ff0d2a9c981fe0096068
+        domain: light
+        brightness_pct: 100
+    - conditions:
+      - condition: trigger
+        id:
+        - Switch Turned Off
+      sequence:
+      - type: turn_off
+        device_id: e52bfd551c4d0d60fc09bcdb3c5364fb
+        entity_id: d77ae05b2444dcd6dae335488f99aec2
+        domain: light
+      - type: turn_off
+        device_id: 87851bf50d9abb5845e2c5b53cfe4042
+        entity_id: 2466fa058f09ff0d2a9c981fe0096068
+        domain: light
+      - type: turn_off
+        device_id: 2566c1adf9f1ee672ec5f38725375564
+        entity_id: 400452fcdfda062f0c80fd0495065b43
+        domain: light
+    default: []
+  mode: single
+- id: '1645975215269'
+  alias: Upstairs Kitchen Light
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 9fa9fa3c7933e7d182b7dfc96d6ef60f
+    entity_id: binary_sensor.upstairs_kitchen_motion_sensor_motion
+    domain: binary_sensor
+    id: Motion Detected
+  - type: no_motion
+    platform: device
+    device_id: 9fa9fa3c7933e7d182b7dfc96d6ef60f
+    entity_id: binary_sensor.upstairs_kitchen_motion_sensor_motion
+    domain: binary_sensor
+    id: No Motion 1 min
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      - condition: time
+        after: 07:20:00
+        before: '20:30:00'
+      sequence:
+      - type: turn_on
+        device_id: 93d91459a50d5271a4b6596e4664816d
+        entity_id: light.upstairs_kitchen_bulb_one
+        domain: light
+        brightness_pct: 100
+      - type: turn_on
+        device_id: 2526c7d1f587c02f79401fb238aea2fa
+        entity_id: light.upstairs_kitchen_bulb_two
+        domain: light
+        brightness_pct: 100
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+        - condition: time
+          after: '20:31:00'
+          before: 07:19:00
+      sequence:
+      - type: turn_on
+        device_id: 93d91459a50d5271a4b6596e4664816d
+        entity_id: light.upstairs_kitchen_bulb_one
+        domain: light
+        brightness_pct: 20
+    - conditions:
+      - condition: trigger
+        id: No Motion 1 min
+      sequence:
+      - type: turn_off
+        device_id: 93d91459a50d5271a4b6596e4664816d
+        entity_id: light.upstairs_kitchen_bulb_one
+        domain: light
+      - type: turn_off
+        device_id: 2526c7d1f587c02f79401fb238aea2fa
+        entity_id: light.upstairs_kitchen_bulb_two
+        domain: light
+    default: []
+  mode: single
+- id: '1645977785557'
+  alias: Upstairs Living Room
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 69775325584e6fdc518487afe600664c
+    entity_id: binary_sensor.upstairs_living_room_motion_sensor_motion
+    domain: binary_sensor
+    id: Motion Detected
+  - type: no_motion
+    platform: device
+    device_id: 69775325584e6fdc518487afe600664c
+    entity_id: binary_sensor.upstairs_living_room_motion_sensor_motion
+    domain: binary_sensor
+    id: No Motion Detected 10 mins
+    for:
+      hours: 0
+      minutes: 20
+      seconds: 0
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      - condition: state
+        entity_id: remote.boys_hub
+        state: 'off'
+      - condition: time
+        after: 07:20:00
+        before: '20:30:00'
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+        - sat
+        - sun
+      sequence:
+      - type: turn_on
+        device_id: e848f8de04e2087b21b6aa5607809310
+        entity_id: light.upstairs_living_room_bulb_one
+        domain: light
+        brightness_pct: 100
+      - type: turn_on
+        device_id: 7109a4781de0172bba233b842ced80c5
+        entity_id: light.upstairs_living_room_bulb_three
+        domain: light
+        brightness_pct: 100
+      - type: turn_on
+        device_id: d858ca18caf84d1a5e44374583139891
+        entity_id: light.upstairs_living_room_bulb_two
+        domain: light
+        brightness_pct: 100
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      - condition: state
+        entity_id: remote.boys_hub
+        state: 'off'
+      - condition: time
+        after: '20:31:00'
+        before: 07:19:00
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+        - sat
+        - sun
+      sequence:
+      - type: turn_on
+        device_id: e848f8de04e2087b21b6aa5607809310
+        entity_id: light.upstairs_living_room_bulb_one
+        domain: light
+        brightness_pct: 20
+    - conditions:
+      - condition: trigger
+        id: No Motion Detected 10 mins
+      sequence:
+      - type: turn_off
+        device_id: e848f8de04e2087b21b6aa5607809310
+        entity_id: light.upstairs_living_room_bulb_one
+        domain: light
+      - type: turn_off
+        device_id: 7109a4781de0172bba233b842ced80c5
+        entity_id: light.upstairs_living_room_bulb_three
+        domain: light
+      - type: turn_off
+        device_id: d858ca18caf84d1a5e44374583139891
+        entity_id: light.upstairs_living_room_bulb_two
+        domain: light
+    default: []
+  mode: single
+- id: '1645978379167'
+  alias: Marcial's Room
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: bfd8ad15f9bbcd75ea2b70d4e0a261f3
+    entity_id: binary_sensor.marcials_room_motion_sensor_motion
+    domain: binary_sensor
+    id: Motion Detected
+  - type: no_motion
+    platform: device
+    device_id: bfd8ad15f9bbcd75ea2b70d4e0a261f3
+    entity_id: binary_sensor.marcials_room_motion_sensor_motion
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+    id: No Motion Detected 10 mins
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      - condition: time
+        after: 09:00:00
+        before: '21:30:00'
+      sequence:
+      - type: turn_on
+        device_id: 41bfc817d9f25ed9cc35d67d5c91a4bd
+        entity_id: 9954f23fba8444cf4dd58807874cc8e6
+        domain: light
+    - conditions:
+      - condition: trigger
+        id: No Motion Detected 10 mins
+      sequence:
+      - type: turn_off
+        device_id: 41bfc817d9f25ed9cc35d67d5c91a4bd
+        entity_id: 9954f23fba8444cf4dd58807874cc8e6
+        domain: light
+    default: []
+  mode: single
+- id: '1645978975015'
+  alias: Upstairs Bathroom
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 1b1c672383ec0fc6c370b26c6be5ba65
+    entity_id: binary_sensor.upstairs_bathroom_motion_sensor_motion
+    domain: binary_sensor
+    id: Motion Detected
+  - type: no_motion
+    platform: device
+    device_id: 1b1c672383ec0fc6c370b26c6be5ba65
+    entity_id: binary_sensor.upstairs_bathroom_motion_sensor_motion
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 8
+      seconds: 0
+    id: No Motion Detected 8 mins
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      sequence:
+      - type: turn_on
+        device_id: 97d06c4a7a38154109c451796a247b58
+        entity_id: 59123cec724f337a81e1fbb4c3ac9a68
+        domain: light
+    - conditions:
+      - condition: trigger
+        id: No Motion Detected 8 mins
+      sequence:
+      - type: turn_off
+        device_id: 97d06c4a7a38154109c451796a247b58
+        entity_id: 59123cec724f337a81e1fbb4c3ac9a68
+        domain: light
+    default: []
+  mode: single
+- id: '1645979865976'
+  alias: Upstairs Hallway
+  description: ''
+  trigger:
+  - platform: time
+    at: '20:15:00'
+    id: 8:15 PM
+  - platform: sun
+    event: sunrise
+    offset: +00:15:00
+    id: After Sunrise
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: 8:15 PM
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      sequence:
+      - type: turn_on
+        device_id: fcc7110b8cb1be51796f3c0585a0a454
+        entity_id: 320914c9a38604434738ffa9cdb32df6
+        domain: light
+        brightness_pct: 15
+    - conditions:
+      - condition: trigger
+        id: After Sunrise
+      sequence:
+      - type: turn_off
+        device_id: fcc7110b8cb1be51796f3c0585a0a454
+        entity_id: 320914c9a38604434738ffa9cdb32df6
+        domain: light
+    default: []
+  mode: single
+- id: '1645994314948'
+  alias: Kitchen
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 78eabf7094e0ffef8a1de07b6ddaa382
+    entity_id: binary_sensor.kitchen_motion_sensor_motion
+    domain: binary_sensor
+    id: Motion Detected
+  - type: no_motion
+    platform: device
+    device_id: 78eabf7094e0ffef8a1de07b6ddaa382
+    entity_id: binary_sensor.kitchen_motion_sensor_motion
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 7
+      seconds: 0
+    id: No Motion Detected 7 mins
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      - condition: time
+        before: '22:00:00'
+        after: 06:45:00
+        weekday:
+        - sun
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+        - sat
+      sequence:
+      - type: turn_on
+        device_id: bfc5e45961b0bea253118129b4707cdc
+        entity_id: 481a17fe660e6b401a86548611267948
+        domain: light
+        brightness_pct: 100
+      - type: turn_on
+        device_id: efbb8dc0d9989b53a819d76ed73438ab
+        entity_id: light.kitchen_light
+        domain: light
+        brightness_pct: 100
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      - condition: time
+        after: '22:01:00'
+        before: 06:44:00
+        weekday:
+        - sat
+        - fri
+        - thu
+        - wed
+        - tue
+        - mon
+        - sun
+      sequence:
+      - type: turn_on
+        device_id: bfc5e45961b0bea253118129b4707cdc
+        entity_id: 481a17fe660e6b401a86548611267948
+        domain: light
+        brightness_pct: 19
+      - type: turn_on
+        device_id: efbb8dc0d9989b53a819d76ed73438ab
+        entity_id: light.kitchen_light
+        domain: light
+        brightness_pct: 19
+    - conditions:
+      - condition: trigger
+        id: No Motion Detected 7 mins
+      sequence:
+      - type: turn_off
+        device_id: efbb8dc0d9989b53a819d76ed73438ab
+        entity_id: light.kitchen_light
+        domain: light
+      - type: turn_off
+        device_id: bfc5e45961b0bea253118129b4707cdc
+        entity_id: 481a17fe660e6b401a86548611267948
+        domain: light
+      - type: turn_off
+        device_id: e52bfd551c4d0d60fc09bcdb3c5364fb
+        entity_id: d77ae05b2444dcd6dae335488f99aec2
+        domain: light
+    default: []
+  mode: single
+- id: '1646009054814'
+  alias: Teagan's Room
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.family
+    id: Family Away
+    to: away
+  - platform: time
+    at: '20:15:00'
+    id: Bedtime Prep
+  - platform: time
+    at: '20:30:00'
+    id: Bedtime Start
+  - platform: time
+    at: '21:15:00'
+    id: Sleeping
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: No Motion Detected 12 mins
+      sequence:
+      - type: turn_off
+        device_id: b9505fede00e4f1eb5bbc689d637110f
+        entity_id: light.teagans_light
+        domain: light
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Family Away
+      sequence:
+      - service: homeassistant.turn_off
+        data: {}
+        target:
+          entity_id: group.teagans_room
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Bedtime Start
+      sequence:
+      - type: turn_off
+        device_id: b9505fede00e4f1eb5bbc689d637110f
+        entity_id: light.teagans_light
+        domain: light
+      - type: turn_off
+        device_id: 6499e5dc469a4463b93deb7b54375f5b
+        entity_id: light.teagans_lamp
+        domain: light
+      - type: turn_off
+        device_id: e8d5322102227e58780acf99bd854892
+        entity_id: 5b06bd6d74bb7718141766418f9b369a
+        domain: switch
+      - type: turn_on
+        device_id: e52bfd551c4d0d60fc09bcdb3c5364fb
+        entity_id: light.teagan_s_night_light
+        domain: light
+  mode: single
+- id: '1646060249220'
+  alias: Home Mode Status
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.family
+    to: not_home
+    id: Family Not Home
+  - platform: state
+    entity_id: group.family
+    to: home
+    id: Family Home
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Family Home
+      sequence:
+      - service: input_select.select_option
+        data:
+          option: Home
+        target:
+          entity_id: input_select.home_mode
+    - conditions:
+      - condition: trigger
+        id: Family Not Home
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Babysitter
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Vacation
+      sequence:
+      - service: input_select.select_option
+        data:
+          option: Away
+        target:
+          entity_id: input_select.home_mode
+    - conditions:
+      - condition: trigger
+        id: Family Not Home
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Vacation
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Babysitter
+      sequence:
+      - service: input_select.select_option
+        data:
+          option: Away
+        target:
+          entity_id: input_select.home_mode
+    default: []
+  mode: single
+- id: '1646077900724'
+  alias: Game Room
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: b7de13f3761831b0c64ff8700bde7a3c
+    entity_id: binary_sensor.game_room_motion_sensor_motion
+    domain: binary_sensor
+    id: Motion Detected
+  - type: no_motion
+    platform: device
+    device_id: b7de13f3761831b0c64ff8700bde7a3c
+    entity_id: binary_sensor.game_room_motion_sensor_motion
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 3
+      seconds: 0
+    id: No Motion Detected 3 mins
+  - platform: device
+    type: turned_on
+    device_id: 164ccde59d40abee497275e959f427bb
+    entity_id: remote.game_room_hub
+    domain: remote
+    id: Hub On
+  - platform: device
+    type: turned_off
+    device_id: 164ccde59d40abee497275e959f427bb
+    entity_id: remote.game_room_hub
+    domain: remote
+    id: Hub Off
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      - condition: device
+        type: is_off
+        device_id: 164ccde59d40abee497275e959f427bb
+        entity_id: remote.game_room_hub
+        domain: remote
+      sequence:
+      - type: turn_on
+        device_id: e67f68d60d15fd8be7d2d8b7e2f1d2cf
+        entity_id: switch.game_room_light_switch
+        domain: switch
+    - conditions:
+      - condition: trigger
+        id: No Motion Detected 3 mins
+      sequence:
+      - type: turn_off
+        device_id: e67f68d60d15fd8be7d2d8b7e2f1d2cf
+        entity_id: switch.game_room_light_switch
+        domain: switch
+    - conditions:
+      - condition: trigger
+        id: Hub On
+      sequence:
+      - type: turn_on
+        device_id: 240626afbe0eeac5f03d60a42100e1fd
+        entity_id: light.game_room_lamp_two
+        domain: light
+        brightness_pct: 75
+      - type: turn_on
+        device_id: 7d9605a28ccdf2888e20aff4e7eb49ff
+        entity_id: light.game_room_rope_light
+        domain: light
+        brightness_pct: 100
+      - type: turn_off
+        device_id: e67f68d60d15fd8be7d2d8b7e2f1d2cf
+        entity_id: switch.game_room_light_switch
+        domain: switch
+      - type: turn_on
+        device_id: 78bfa4f9be924a2b18bf1503e083e782
+        entity_id: 4bf4fcc2274f56c6f0456a3482b89cb5
+        domain: switch
+    - conditions:
+      - condition: trigger
+        id: Hub Off
+      sequence:
+      - type: turn_on
+        device_id: e67f68d60d15fd8be7d2d8b7e2f1d2cf
+        entity_id: switch.game_room_light_switch
+        domain: switch
+      - type: turn_off
+        device_id: 240626afbe0eeac5f03d60a42100e1fd
+        entity_id: light.game_room_lamp_two
+        domain: light
+      - type: turn_off
+        device_id: 7d9605a28ccdf2888e20aff4e7eb49ff
+        entity_id: light.game_room_rope_light
+        domain: light
+      - type: turn_off
+        device_id: 78bfa4f9be924a2b18bf1503e083e782
+        entity_id: 4bf4fcc2274f56c6f0456a3482b89cb5
+        domain: switch
+      - delay:
+          hours: 0
+          minutes: 0
+          seconds: 10
+          milliseconds: 0
+      - service: remote.send_command
+        data:
+          device: Game Room TV
+          command: PowerToggle
+        target:
+          entity_id: remote.game_room_hub
+    default: []
+  mode: single
+- id: '1646100992495'
+  alias: 1st Floor Climate Control
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: input_select.home_mode
+    to: Home
+    id: Home
+  - platform: state
+    entity_id: input_select.home_mode
+    to: Away
+    id: Away
+  - platform: time
+    at: 08:00:00
+    id: Home Mode Start (Home)
+  - platform: time
+    at: '21:30:00'
+    id: Sleep Start 9:30PM
+  - platform: time
+    at: '22:15:00'
+    id: Sleep Start 10:15PM
+  - platform: time
+    at: 05:45:00
+    id: Morning 5:45AM
+  - platform: numeric_state
+    entity_id: sensor.openweathermap_temperature
+    above: '65'
+    id: Above 65
+  - platform: numeric_state
+    entity_id: sensor.openweathermap_feels_like_temperature
+    above: 75
+    id: Above 75
+  - platform: numeric_state
+    entity_id: sensor.openweathermap_temperature
+    below: '59'
+    id: Below 59
+  - platform: numeric_state
+    entity_id: sensor.openweathermap_temperature
+    below: 73
+    id: Below 73
+  - platform: numeric_state
+    entity_id: sensor.openweathermap_temperature
+    id: Between 68 and 71
+    below: '72.5'
+    above: '68'
+  - platform: state
+    entity_id:
+    - binary_sensor.1st_floor_windows
+    id: 1st Floor Windows Opened for 5 Mins
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Home
+      sequence:
+      - device_id: 8a3032287eb04024c27a7987365213f5
+        domain: climate
+        entity_id: climate.thermostat
+        type: set_preset_mode
+        preset_mode: Home
+    - conditions:
+      - condition: trigger
+        id: Away
+      sequence:
+      - device_id: 8a3032287eb04024c27a7987365213f5
+        domain: climate
+        entity_id: climate.thermostat
+        type: set_preset_mode
+        preset_mode: Away
+    - conditions:
+      - condition: trigger
+        id: Home Mode Start (Home)
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Vacation
+      sequence:
+      - device_id: 8a3032287eb04024c27a7987365213f5
+        domain: climate
+        entity_id: climate.thermostat
+        type: set_preset_mode
+        preset_mode: Home
+    - conditions:
+      - condition: trigger
+        id: Sleep Start 9:30PM
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Vacation
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+        - condition: state
+          entity_id: remote.living_room_hub
+          state: 'on'
+      sequence:
+      - device_id: 8a3032287eb04024c27a7987365213f5
+        domain: climate
+        entity_id: climate.thermostat
+        type: set_preset_mode
+        preset_mode: Sleep
+    - conditions:
+      - condition: trigger
+        id: Sleep Start 10:15PM
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Vacation
+      sequence:
+      - device_id: 8a3032287eb04024c27a7987365213f5
+        domain: climate
+        entity_id: climate.thermostat
+        type: set_preset_mode
+        preset_mode: Sleep
+    - conditions:
+      - condition: trigger
+        id: Morning 5:45AM
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Vacation
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      sequence:
+      - device_id: 8a3032287eb04024c27a7987365213f5
+        domain: climate
+        entity_id: climate.thermostat
+        type: set_preset_mode
+        preset_mode: Mornings
+    - conditions:
+      - condition: trigger
+        id: Above 65
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: binary_sensor.1st_floor_windows
+          state: 'on'
+      sequence:
+      - device_id: 8a3032287eb04024c27a7987365213f5
+        domain: climate
+        entity_id: climate.thermostat
+        type: set_hvac_mode
+        hvac_mode: heat_cool
+    - conditions:
+      - condition: trigger
+        id:
+        - Above 75
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: binary_sensor.1st_floor_windows
+          state: 'on'
+      sequence:
+      - device_id: 8a3032287eb04024c27a7987365213f5
+        domain: climate
+        entity_id: climate.thermostat
+        type: set_hvac_mode
+        hvac_mode: cool
+    - conditions:
+      - condition: trigger
+        id: Between 68 and 71
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: binary_sensor.1st_floor_windows
+          state: 'on'
+      sequence:
+      - device_id: 8a3032287eb04024c27a7987365213f5
+        domain: climate
+        entity_id: climate.thermostat
+        type: set_hvac_mode
+        hvac_mode: 'off'
+    - conditions:
+      - condition: trigger
+        id: Below 59
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: binary_sensor.1st_floor_windows
+          state: 'on'
+      sequence:
+      - device_id: 8a3032287eb04024c27a7987365213f5
+        domain: climate
+        entity_id: climate.thermostat
+        type: set_hvac_mode
+        hvac_mode: heat
+    - conditions:
+      - condition: trigger
+        id: Below 73
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: binary_sensor.1st_floor_windows
+          state: 'on'
+      sequence:
+      - device_id: 8a3032287eb04024c27a7987365213f5
+        domain: climate
+        entity_id: climate.thermostat
+        type: set_hvac_mode
+        hvac_mode: heat_cool
+    - conditions:
+      - condition: trigger
+        id: 1st Floor Windows Opened for 5 Mins
+      sequence:
+      - device_id: 8a3032287eb04024c27a7987365213f5
+        domain: climate
+        entity_id: climate.thermostat
+        type: set_hvac_mode
+        hvac_mode: 'off'
+    default: []
+  mode: single
+- id: '1658676160393'
+  alias: Patio
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - media_player.patio_speakers_media_center
+    to: idle
+    id: Patio Speaker Idle
+  - platform: state
+    entity_id:
+    - media_player.patio_speakers_media_center
+    to: playing
+    id: Patio Speaker Playing
+  - platform: state
+    entity_id:
+    - media_player.patio_speakers_media_center
+    to: 'off'
+    id: Patio Speaker Off
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Patio Speaker Idle
+      sequence:
+      - type: turn_on
+        device_id: a35d36fbdde1788ec3bbb106b7e9277d
+        entity_id: switch.patio_receiver
+        domain: switch
+    - conditions:
+      - condition: trigger
+        id: Patio Speaker Playing
+      sequence:
+      - type: turn_on
+        device_id: a35d36fbdde1788ec3bbb106b7e9277d
+        entity_id: switch.patio_receiver
+        domain: switch
+    - conditions:
+      - condition: trigger
+        id: Patio Speaker Off
+      sequence:
+      - type: turn_off
+        device_id: a35d36fbdde1788ec3bbb106b7e9277d
+        entity_id: switch.patio_receiver
+        domain: switch
+    default: []
+  mode: single
+- id: '1664069376416'
+  alias: Storage Room
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.server_room_motion_sensor_motion
+    to: 'on'
+    id: Motion Detected
+  - platform: state
+    entity_id:
+    - binary_sensor.server_room_motion_sensor_motion
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+    id: No Motion 5 mins
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      sequence:
+      - type: turn_on
+        device_id: 69e32e3fdcc08eda4239eecee2e61cd4
+        entity_id: 4b2c5ad7d61e2f97ce13de514de61dd0
+        domain: light
+    - conditions:
+      - condition: trigger
+        id: No Motion 5 mins
+      sequence:
+      - type: turn_off
+        device_id: 69e32e3fdcc08eda4239eecee2e61cd4
+        entity_id: 4b2c5ad7d61e2f97ce13de514de61dd0
+        domain: light
+  mode: single
+- id: '1664480696450'
+  alias: Gannon Arrives At School
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - person.gannon_dunn
+    to: Farmington Elem
+  condition: []
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Gannon arrived at school
+      title: Gannon Location Update
+  - service: notify.mobile_app_keelys_iphone
+    data:
+      message: Gannon arrived at school
+      title: Gannon Location Update
+  mode: single
+- id: '1664926782278'
+  alias: Gannon Arrived Home
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - person.gannon_dunn
+    to: home
+  condition:
+  - condition: time
+    before: '16:00:00'
+    after: 06:00:00
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Gannon arrived at home
+      title: Gannon Location Update
+  - service: notify.mobile_app_keelys_iphone
+    data:
+      message: Gannon arrived at home
+      title: Gannon Location Update
+  mode: single
+- id: '1668484169120'
+  alias: Hallway
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - light.hallway_light
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 5f17bc07b0ba584da71d4703ea91f81d
+    entity_id: light.hallway_light
+    domain: light
+  mode: single
+- id: '1669577772834'
+  alias: Holiday Lights On (Christmas)
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -00:15:00
+  condition:
+  - condition: state
+    entity_id: input_select.holiday_season
+    state: Christmas
+  action:
+  - service: homeassistant.turn_on
+    data: {}
+    target:
+      entity_id: switch.indoor_decorations
+  - service: homeassistant.turn_on
+    data: {}
+    target:
+      entity_id: switch.outdoor_decoractions
+  mode: single
+- id: '1671161670160'
+  alias: Boy's Bedtime Story On
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.boy_s_bedtime_story
+    to: 'on'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 0c22a26d564c934c8885f7b4aacbadd6
+    entity_id: switch.gannons_lamp
+    domain: switch
+  - type: turn_on
+    device_id: 5f6e8191c369d2fbd2ae750335c3c1da
+    entity_id: light.boys_night_light
+    domain: light
+  - type: turn_off
+    device_id: 1022a76994bc393691ddf00589043df8
+    entity_id: light.kagans_lamp
+    domain: light
+  - type: turn_on
+    device_id: fcc7110b8cb1be51796f3c0585a0a454
+    entity_id: 320914c9a38604434738ffa9cdb32df6
+    domain: light
+    brightness_pct: 15
+  - type: turn_off
+    device_id: e2150da5adf724dc5228a23d090a59b9
+    entity_id: switch.gannon_cloud_light
+    domain: switch
+  - type: turn_off
+    device_id: 4552b8f5b990787ccf82693fe8fe04c2
+    entity_id: switch.kagan_cloud_light
+    domain: switch
+  mode: single
+- id: '1671161800659'
+  alias: Boy's Bedtime Story Off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.boy_s_bedtime_story
+    to: 'off'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 0c22a26d564c934c8885f7b4aacbadd6
+    entity_id: switch.gannons_lamp
+    domain: switch
+  - type: turn_on
+    device_id: 5f6e8191c369d2fbd2ae750335c3c1da
+    entity_id: light.boys_night_light
+    domain: light
+  - type: turn_off
+    device_id: 1022a76994bc393691ddf00589043df8
+    entity_id: light.kagans_lamp
+    domain: light
+  - type: turn_on
+    device_id: fcc7110b8cb1be51796f3c0585a0a454
+    entity_id: 320914c9a38604434738ffa9cdb32df6
+    domain: light
+    brightness_pct: 15
+  - type: turn_off
+    device_id: e2150da5adf724dc5228a23d090a59b9
+    entity_id: switch.gannon_cloud_light
+    domain: switch
+  - type: turn_off
+    device_id: 4552b8f5b990787ccf82693fe8fe04c2
+    entity_id: switch.kagan_cloud_light
+    domain: switch
+  - data: {}
+    target:
+      entity_id: light.upstairs_living_room_light
+    action: homeassistant.turn_off
+  - type: turn_off
+    device_id: 2526c7d1f587c02f79401fb238aea2fa
+    entity_id: light.upstairs_kitchen_bulb_two
+    domain: light
+  mode: single
+- id: '1676738355742'
+  alias: Alarm Siren Alert Off
+  description: '
+
+    Turns off siren'
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.alarm_siren
+    to: 'off'
+  condition: []
+  action:
+  - service: button.press
+    data: {}
+    target:
+      entity_id: button.front_doorbell_chime_reset_alarm
+  mode: single
+- id: '1676739152708'
+  alias: Front Doorbell Stream Start Hourly
+  description: Stream auto starts on motion detected.
+  trigger:
+  - platform: time_pattern
+    minutes: '30'
+  condition:
+  - condition: state
+    entity_id: input_select.home_mode
+    state: Home
+  action:
+  - service: button.press
+    data: {}
+    target:
+      entity_id: button.front_doorbell_start_p2p_stream
+  mode: single
+- id: '1676765991305'
+  alias: Alarm Siren Trigger Delay Message
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - alarm_control_panel.alarmo
+    to: triggered
+  condition: []
+  action:
+  - service: notify.alexa_media_back_door_tablet
+    data:
+      message: Please disarm the alarm before I have to notify the police.  Just enter
+        your password on the screen and hit disarm.
+  mode: single
+- id: '1682288346852'
+  alias: Teagan Eat Breakfast Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_eat_breakfast
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_eat_breakfast
+  mode: single
+- id: '1682288420619'
+  alias: Teagan Rinse Bowl Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_rinse_bowl
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_rinse_bowl
+  mode: single
+- id: '1682288445353'
+  alias: Teagan Take Vitamins Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_take_vitamins
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_take_vitamins
+  mode: single
+- id: '1682288474662'
+  alias: Teagan Get Dressed Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_get_dressed
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_get_dressed
+  mode: single
+- id: '1682288503595'
+  alias: Teagan Morning Brush Teeth Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_morning_brush_teeth
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_morning_brush_teeth
+  mode: single
+- id: '1682349977164'
+  alias: Teagan Morning Brush Teeth Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_morning_brush_teeth
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_morning_brush_teeth
+  mode: single
+- id: '1682350005861'
+  alias: Teagan Morning Brush Hair Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_morning_brush_hair
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_morning_brush_hair
+  mode: single
+- id: '1682350034885'
+  alias: Teagan Pack Snack Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_pack_snack
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_pack_snack
+  mode: single
+- id: '1682350059605'
+  alias: Teagan Fill and Pack Water Bottle Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_fill_and_pack_water_bottle
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_fill_and_pack_water_bottle
+  mode: single
+- id: '1682350087302'
+  alias: Teagan Put on Shoes Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_put_on_shoes
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_put_on_shoes
+  mode: single
+- id: '1682352508864'
+  alias: Teagan Hang up Backpack/Coat Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_hang_up_backpack_coat
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_hang_up_backpack_coat
+  mode: single
+- id: '1682352540584'
+  alias: Teagan Put away Shoes Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_put_away_shoes
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_put_away_shoes
+  mode: single
+- id: '1682352563943'
+  alias: Teagan Give Mom Folder Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_give_mom_folder
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_give_mom_folder
+  mode: single
+- id: '1682352563943'
+  alias: Teagan Give Mom Folder Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_do_homework_reading
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_do_homework_reading
+  mode: single
+- id: '1682352811427'
+  alias: Teagan Do Homework/Reading Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_do_homework_reading
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_do_homework_reading
+  mode: single
+- id: '1682352838705'
+  alias: Teagan Do 1 Chore from List Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_do_1_chore_from_list
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_do_1_chore_from_list
+  mode: single
+- id: '1682352875391'
+  alias: Teagan Help with Dinner Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_help_with_dinner
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_help_with_dinner
+  mode: single
+- id: '1682353709848'
+  alias: Teagan Clean up Room Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_clean_up_room
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_clean_up_room_counter
+  mode: single
+- id: '1682353709848'
+  alias: Teagan Put on PJ's Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_put_on_pj_s
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_put_on_pj_s_counter
+  mode: single
+- id: '1682353790154'
+  alias: Teagan Put on PJ's Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_put_on_pj_s
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_put_on_pj_s_counter
+  mode: single
+- id: '1682353813303'
+  alias: Teagan Evening Brush Teeth Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_evening_brush_teeth
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_evening_brush_teeth_counter
+  mode: single
+- id: '1682353835714'
+  alias: Teagan Put iPad on Charger Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_put_ipad_on_charger
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_put_ipad_on_charger_counter
+  mode: single
+- id: '1682353859992'
+  alias: Teagan Pick Clothes for Next Day Tracker
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.teagan_pick_clothes_for_next_day
+    to: 'on'
+  condition: []
+  action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.teagan_pick_clothes_for_next_day_counter
+  mode: single
+- id: '1693914407254'
+  alias: Kagan Bus Stop
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - person.kagan_dunn
+    to: Bus Stop
+  condition:
+  - condition: time
+    before: '17:00:00'
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    after: 06:00:00
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      title: Kagan Location Update
+      message: Kagan is at the bus stop
+  - service: notify.mobile_app_keelys_iphone
+    data:
+      message: Kagan is at the bus stop
+      title: Kagan Location Update
+  mode: single
+- id: '1694175066790'
+  alias: Kagan at School
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - person.kagan_dunn
+    to: Douglas Elem
+  condition: []
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Kagan arrived at school
+      title: Kagan Location Update
+  - service: notify.mobile_app_keelys_iphone
+    data:
+      message: Kagan arrived at school
+      title: Kagan Location Update
+  mode: single
+- id: '1694175117973'
+  alias: Kagan Left School
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - person.kagan_dunn
+    from: Douglas Elem
+  condition: []
+  action:
+  - service: notify.mobile_app_ebon_hawk
+    data:
+      message: Kagan left school
+      title: Kagan Location Update
+  - service: notify.mobile_app_keelys_iphone
+    data:
+      message: Kagan left school
+      title: Kagan Location Update
+  mode: single
+- id: '1695609314480'
+  alias: Vacuum Kitchen
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.kitchen_cleaning
+    to: 'on'
+  condition: []
+  action:
+  - service: vacuum.send_command
+    data:
+      command: app_segment_clean
+      params:
+      - segments:
+        - 22
+        repeat: 1
+    target:
+      device_id: 5889386601f5f950034f18f3552c1845
+  mode: single
+- id: '1695609426346'
+  alias: Turn Off Kitchen Cleaning
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - vacuum.rosey
+    to: returning
+  condition:
+  - condition: state
+    entity_id: input_boolean.kitchen_cleaning
+    state: 'on'
+  action:
+  - service: homeassistant.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.kitchen_cleaning
+  mode: single
+- id: '1695656396364'
+  alias: Vacuum Dining Room
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.dining_room_cleaning
+    to: 'on'
+  condition: []
+  action:
+  - service: vacuum.send_command
+    data:
+      command: app_segment_clean
+      params:
+      - segments:
+        - 17
+        repeat: 1
+    target:
+      device_id: 5889386601f5f950034f18f3552c1845
+  mode: single
+- id: '1695656424728'
+  alias: Vacuum Living Room
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.living_room_cleaning
+    to: 'on'
+  condition: []
+  action:
+  - service: vacuum.send_command
+    data:
+      command: app_segment_clean
+      params:
+      - segments:
+        - 23
+        repeat: 1
+    target:
+      device_id: 5889386601f5f950034f18f3552c1845
+  mode: single
+- id: '1695656478351'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - vacuum.rosey
+    to: returning
+  condition:
+  - condition: state
+    entity_id: input_boolean.dining_room_cleaning
+    state: 'on'
+  action:
+  - service: homeassistant.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.dining_room_cleaning
+  mode: single
+- id: '1695656532189'
+  alias: Turn Off Living Room Cleaning
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - vacuum.rosey
+    to: returning
+  condition:
+  - condition: state
+    entity_id: input_boolean.living_room_cleaning
+    state: 'on'
+  action:
+  - service: homeassistant.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.living_room_cleaning
+  mode: single
+- id: '1699902389614'
+  alias: Bathroom
+  description: ''
+  triggers:
+  - entity_id: binary_sensor.bathroom_motion_sensor_motion
+    to: 'on'
+    id: Motion Detected
+    trigger: state
+  - entity_id: binary_sensor.bathroom_motion_sensor_motion
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 7
+      seconds: 0
+    id: No Motion Detected
+    trigger: state
+  - type: moist
+    device_id: 58dd0da4ce4a625407fd80c33bc4163d
+    entity_id: db53fd465d187ca7a212669bd22f1231
+    domain: binary_sensor
+    id: Water Detected
+    trigger: device
+  - type: moist
+    device_id: 58dd0da4ce4a625407fd80c33bc4163d
+    entity_id: db53fd465d187ca7a212669bd22f1231
+    domain: binary_sensor
+    id: Battery Below 25%
+    trigger: device
+  - type: turned_on
+    device_id: 53a8875dbece83a9e40691bf2287a542
+    entity_id: fan.bathroom_fan
+    domain: fan
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+    trigger: device
+  - entity_id: sensor.bathroom_sensor_humidity_sensor
+    above: 49
+    id: Bathroom Humidity Above 49%
+    trigger: numeric_state
+  - entity_id: sensor.bathroom_sensor_humidity_sensor
+    below: 53
+    id: Bathroom Humidity Sensor is Below 53%
+    trigger: numeric_state
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: time
+        after: 06:00:00
+        before: '22:00:00'
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      sequence:
+      - type: turn_on
+        device_id: 32cb51ddf5eae9d180a68df41604a915
+        entity_id: light.bathroom_light
+        domain: light
+        brightness_pct: 100
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: time
+        after: '22:01:00'
+        before: 05:59:00
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      sequence:
+      - type: turn_on
+        device_id: 32cb51ddf5eae9d180a68df41604a915
+        entity_id: light.bathroom_light
+        domain: light
+        brightness_pct: 25
+    - conditions:
+      - condition: trigger
+        id: No Motion Detected
+      sequence:
+      - type: turn_off
+        device_id: 32cb51ddf5eae9d180a68df41604a915
+        entity_id: light.bathroom_light
+        domain: light
+    - conditions:
+      - condition: trigger
+        id: Water Detected
+      sequence:
+      - data:
+          message: Bathroom Water Leak Detected
+          title: '!!! WATER LEAK DETECTED !!!'
+        action: notify.mobile_app_ebon_hawk
+      - data:
+          message: Bathroom Water Leak Detected
+          title: '!!! WATER LEAK DETECTED !!!'
+        action: notify.mobile_app_keelys_iphone
+    - conditions:
+      - condition: trigger
+        id: Battery Below 25%
+      sequence:
+      - data:
+          message: Bathroom Water Sensor Battery Low
+          title: '!!! Sensor Battery Critical !!!'
+        action: notify.mobile_app_ebon_hawk
+    - conditions:
+      - condition: trigger
+        id:
+        - Bathroom Humidity Above 49%
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      sequence:
+      - data: {}
+        target:
+          entity_id: switch.bathroom_fan
+        action: homeassistant.turn_on
+    - conditions:
+      - condition: trigger
+        id:
+        - Bathroom Humidity Sensor is Below 53%
+      sequence:
+      - data: {}
+        target:
+          entity_id: switch.bathroom_fan
+        action: homeassistant.turn_off
+    - conditions:
+      - condition: trigger
+        id: Fan on 10 mins
+      sequence:
+      - type: turn_off
+        device_id: 53a8875dbece83a9e40691bf2287a542
+        entity_id: 03695c36862df9e7c411e4e30b8b8100
+        domain: fan
+    default: []
+  mode: single
+- id: '1700009319175'
+  alias: Away Mode
+  description: When everyone is away, turn everything off.
+  triggers:
+  - entity_id: input_select.home_mode
+    to: Away
+    id: Home Mode Away
+    trigger: state
+  - entity_id: input_select.home_mode
+    to: Home
+    id: Home Mode Home
+    trigger: state
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Home Mode Away
+      sequence:
+      - type: turn_off
+        device_id: e52bfd551c4d0d60fc09bcdb3c5364fb
+        entity_id: d77ae05b2444dcd6dae335488f99aec2
+        domain: light
+      - type: turn_off
+        device_id: bfc5e45961b0bea253118129b4707cdc
+        entity_id: 481a17fe660e6b401a86548611267948
+        domain: light
+      - type: turn_off
+        device_id: efbb8dc0d9989b53a819d76ed73438ab
+        entity_id: light.kitchen_light
+        domain: light
+      - type: turn_off
+        device_id: ea78aa72e24c3e70b000d13cda7b43d0
+        entity_id: light.dining_room_light_switch
+        domain: light
+      - type: turn_off
+        device_id: 4a63886e901ee8e60dd20eb5028ad82b
+        entity_id: light.living_room_bulb_one
+        domain: light
+      - type: turn_off
+        device_id: ff5e710409eaeeed811a9407d2a69c25
+        entity_id: light.living_room_bulb_two
+        domain: light
+      - type: turn_off
+        device_id: 9d76fa8218b393b52fac4cc84ba2a1aa
+        entity_id: light.living_room_bulb_three
+        domain: light
+      - type: turn_off
+        device_id: 53b154a9367cd94898816635cf364594
+        entity_id: light.toy_room_light
+        domain: light
+      - type: turn_off
+        device_id: 5f17bc07b0ba584da71d4703ea91f81d
+        entity_id: light.hallway_light
+        domain: light
+      - type: turn_off
+        device_id: 6499e5dc469a4463b93deb7b54375f5b
+        entity_id: light.teagans_lamp
+        domain: light
+      - type: turn_off
+        device_id: b9505fede00e4f1eb5bbc689d637110f
+        entity_id: light.teagans_light
+        domain: light
+      - type: turn_off
+        device_id: e8d5322102227e58780acf99bd854892
+        entity_id: 5b06bd6d74bb7718141766418f9b369a
+        domain: switch
+      - type: turn_off
+        device_id: 32cb51ddf5eae9d180a68df41604a915
+        entity_id: light.bathroom_light
+        domain: light
+      - type: turn_off
+        device_id: 53a8875dbece83a9e40691bf2287a542
+        entity_id: 03695c36862df9e7c411e4e30b8b8100
+        domain: fan
+      - type: turn_off
+        device_id: ace4b05bee9f5165ffa3f302659dbe2f
+        entity_id: light.bedroom_light
+        domain: light
+      - type: turn_off
+        device_id: 4fd2ce3d2b2f0cd8f7c5c3e681bdf7f3
+        entity_id: light.tobins_lamp
+        domain: light
+      - type: turn_off
+        device_id: 9c6e4c2b6d4791024a55214124f0cffd
+        entity_id: light.keelys_lamp
+        domain: light
+      - type: turn_off
+        device_id: 93bea657372f749a914324e732564664
+        entity_id: light.upstairs_landing_light
+        domain: light
+      - type: turn_off
+        device_id: 93d91459a50d5271a4b6596e4664816d
+        entity_id: f824aaf1220d1dd1d86332fc16a58766
+        domain: light
+      - type: turn_off
+        device_id: 2526c7d1f587c02f79401fb238aea2fa
+        entity_id: 6df394a9cbd4a9d21c3c2899cf3b3714
+        domain: light
+      - type: turn_off
+        device_id: e848f8de04e2087b21b6aa5607809310
+        entity_id: light.upstairs_living_room_bulb_one
+        domain: light
+      - type: turn_off
+        device_id: d858ca18caf84d1a5e44374583139891
+        entity_id: light.upstairs_living_room_bulb_two
+        domain: light
+      - type: turn_off
+        device_id: 7109a4781de0172bba233b842ced80c5
+        entity_id: light.upstairs_living_room_bulb_three
+        domain: light
+      - type: turn_off
+        device_id: fcc7110b8cb1be51796f3c0585a0a454
+        entity_id: 320914c9a38604434738ffa9cdb32df6
+        domain: light
+      - type: turn_off
+        device_id: 97d06c4a7a38154109c451796a247b58
+        entity_id: 59123cec724f337a81e1fbb4c3ac9a68
+        domain: light
+      - type: turn_off
+        device_id: 41bfc817d9f25ed9cc35d67d5c91a4bd
+        entity_id: light.marcials_light
+        domain: light
+      - type: turn_off
+        device_id: 5061c2e067c5771a487d6db1a9b42f33
+        entity_id: light.marcial_s_lamp
+        domain: light
+      - type: turn_off
+        device_id: 9262ad68408f66758e64c405346ad1db
+        entity_id: a56724c978a3420567059bd0df5f65be
+        domain: light
+      - type: turn_off
+        device_id: 1022a76994bc393691ddf00589043df8
+        entity_id: light.kagans_lamp
+        domain: light
+      - type: turn_off
+        device_id: 9262ad68408f66758e64c405346ad1db
+        entity_id: e5ba6439bf67f7b5093a9b27f51f058f
+        domain: switch
+      - type: turn_off
+        device_id: 9262ad68408f66758e64c405346ad1db
+        entity_id: 4e68a95d41f08820fd9412d9084ad057
+        domain: switch
+      - type: turn_off
+        device_id: ec33084f11a5b7cb8337849a05e582e6
+        entity_id: switch.kagan_s_fan
+        domain: switch
+      - type: turn_off
+        device_id: 9262ad68408f66758e64c405346ad1db
+        entity_id: 8baa365355a23ddf0fd50df21e1ed194
+        domain: fan
+      - type: turn_off
+        device_id: e2150da5adf724dc5228a23d090a59b9
+        entity_id: switch.gannon_cloud_light
+        domain: switch
+      - type: turn_off
+        device_id: 4552b8f5b990787ccf82693fe8fe04c2
+        entity_id: switch.kagan_cloud_light
+        domain: switch
+      - type: turn_off
+        device_id: 5f6e8191c369d2fbd2ae750335c3c1da
+        entity_id: 767984a56d1d9f97e32a6d5a7da0f56a
+        domain: light
+      - type: turn_off
+        device_id: 2566c1adf9f1ee672ec5f38725375564
+        entity_id: 400452fcdfda062f0c80fd0495065b43
+        domain: light
+      - type: turn_off
+        device_id: 87851bf50d9abb5845e2c5b53cfe4042
+        entity_id: 2466fa058f09ff0d2a9c981fe0096068
+        domain: light
+      - type: turn_off
+        device_id: 5ae3789023f6f059c634dbd5909d66c7
+        entity_id: switch.maker_lamp
+        domain: switch
+      - type: turn_off
+        device_id: b35910d425f772cd8c71df3319d2fe66
+        entity_id: d32807f5cf066e5ce9260228b1baa065
+        domain: light
+      - type: turn_off
+        device_id: 4e26f2e2fcfd38676a50e0bca5d24c2d
+        entity_id: 9da0518695329ae08229b9d160ec7056
+        domain: light
+      - type: turn_off
+        device_id: a5317e5246a7c0d39d7e9ff3f653ea49
+        entity_id: 21f9ca2ed123c1d13a30429895d6fe22
+        domain: light
+      - type: turn_off
+        device_id: 5f12cf1fda2669fb39a0d2aaece1327f
+        entity_id: 0c91c4c298d7e1eae5c4ba009ee1bc2a
+        domain: light
+      - type: turn_off
+        device_id: e67f68d60d15fd8be7d2d8b7e2f1d2cf
+        entity_id: switch.game_room_light_switch
+        domain: switch
+      - type: turn_off
+        device_id: 78bfa4f9be924a2b18bf1503e083e782
+        entity_id: 4bf4fcc2274f56c6f0456a3482b89cb5
+        domain: switch
+      - type: turn_off
+        device_id: 240626afbe0eeac5f03d60a42100e1fd
+        entity_id: light.game_room_lamp_two
+        domain: light
+      - type: turn_off
+        device_id: 7d9605a28ccdf2888e20aff4e7eb49ff
+        entity_id: light.game_room_rope_light
+        domain: light
+      - type: turn_off
+        device_id: 69e32e3fdcc08eda4239eecee2e61cd4
+        entity_id: 4b2c5ad7d61e2f97ce13de514de61dd0
+        domain: light
+      - type: turn_off
+        device_id: 73f44fb29948d96d0ce3140eb8b99482
+        entity_id: 4959bc38d89aef70a41484b90485f051
+        domain: light
+      - type: turn_off
+        device_id: 35d70f58105f0b508c827f09cdb25045
+        entity_id: 2715d1c9cfc946ce845c7c8c5900c112
+        domain: light
+      - type: turn_off
+        device_id: 6947407cb4efa6401738840cf9e5542d
+        entity_id: bbf2f00377402c18b664c9b5b8e95d17
+        domain: light
+      - type: turn_off
+        device_id: c9fb02eaeee9bc5605cf8b3020105ea5
+        entity_id: 2a7214f023af117e8526bc3c5727f6e7
+        domain: light
+      - type: turn_off
+        device_id: 4558c9113c9daa5e45373947c914228d
+        entity_id: 2374c993e4ded45425085a6aeb96b594
+        domain: light
+      - type: turn_off
+        device_id: 0688f613fe749c80af499423b9bb127a
+        entity_id: e734832affc9458a19313ea156ba2f20
+        domain: switch
+      - type: turn_off
+        device_id: 9a0a4d4477ebbc9b64e4a4507edbb768
+        entity_id: 167b8b9b18c045321aec2ba13483b945
+        domain: switch
+      - type: turn_off
+        device_id: 3cdb844f65f51f2c7ca82d5499fe396b
+        entity_id: de0c27f6be389a87f17e3e5be43f2381
+        domain: light
+      - type: turn_off
+        device_id: 6760d37e410a48ada931302106a4742c
+        entity_id: 63f3f36e9a13b792733a72ab1aaeb686
+        domain: switch
+      - type: turn_off
+        device_id: 010542fdc37b1a2e8c9ec03cf3f22acb
+        entity_id: 21afaaed277564b6b7fa6cf45e00d1f5
+        domain: fan
+      - type: turn_off
+        device_id: a2c5872926690ae3e03d96a4250f6fde
+        entity_id: c5aaacfad660c110fc9ba409e1c6776c
+        domain: light
+      - type: turn_off
+        device_id: a4735dc3df5e4ac4dfbbbca136519051
+        entity_id: 9913e6c4c261d365c95b849f323fa642
+        domain: light
+      - type: turn_off
+        device_id: 359d4f72aba225bf44e3db716381e3af
+        entity_id: dc2fb5ae5641d38fa1a000ce0b774f92
+        domain: fan
+      - type: turn_off
+        device_id: 0424cada18512e3df182e958cdedbe7a
+        entity_id: 3ad1daa47103465bbf8534b5a357f1cc
+        domain: fan
+      - type: turn_off
+        device_id: 53a8875dbece83a9e40691bf2287a542
+        entity_id: 03695c36862df9e7c411e4e30b8b8100
+        domain: fan
+      - device_id: 48b96e94d28d9157f5761ab4d293d69c
+        domain: lock
+        entity_id: 6b04d111e4e06322399283d629379e64
+        type: lock
+      - type: turn_off
+        device_id: cde20a7ab87671368844e1f79ff7f4d8
+        entity_id: 49f885c1eadb5addd2144db1a8dc6e04
+        domain: switch
+      - type: turn_off
+        device_id: cde20a7ab87671368844e1f79ff7f4d8
+        entity_id: 93f7b44692c5c23a7d71aac7eb2426d8
+        domain: switch
+      - type: turn_off
+        device_id: 7e06e91ef94c8f056b4e71887e44290b
+        entity_id: c146bd0bab3ffd0a24bb7b828aed6eaa
+        domain: switch
+      - type: turn_off
+        device_id: 7e06e91ef94c8f056b4e71887e44290b
+        entity_id: e6cf8814d79e869863352839e6fd7bf2
+        domain: switch
+      - type: turn_off
+        device_id: cde20a7ab87671368844e1f79ff7f4d8
+        entity_id: 49f885c1eadb5addd2144db1a8dc6e04
+        domain: switch
+      - type: turn_off
+        device_id: cde20a7ab87671368844e1f79ff7f4d8
+        entity_id: 93f7b44692c5c23a7d71aac7eb2426d8
+        domain: switch
+    default: []
+  mode: single
+- id: '1700009606125'
+  alias: Holiday Lights On (Halloween)
+  description: Turn on Halloween Decorations inside and out.
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: -00:15:00
+  condition:
+  - condition: state
+    entity_id: input_select.holiday_season
+    state: Halloween
+  action:
+  - type: turn_on
+    device_id: 2cdaf4678cfb815869b06b2743ecb810
+    entity_id: switch.front_door_plug
+    domain: switch
+  - type: turn_on
+    device_id: 25329b7610513967ea73ec5ddf5ed579
+    entity_id: 9c21a3090b8aa48dc9ea47856fee8967
+    domain: switch
+  - type: turn_on
+    device_id: 25329b7610513967ea73ec5ddf5ed579
+    entity_id: 1bdcedeb120d315208d7d53face7e166
+    domain: switch
+  - type: turn_on
+    device_id: 25329b7610513967ea73ec5ddf5ed579
+    entity_id: b965bec622eccb7914c852e2b9c4f843
+    domain: switch
+  - type: turn_on
+    device_id: 25329b7610513967ea73ec5ddf5ed579
+    entity_id: fd682ce4b0fc8cbb563796c13f4539f4
+    domain: switch
+  - type: turn_on
+    device_id: f9549f4aa4bda5d3c957ac4024f6d889
+    entity_id: 36e9985c401824c2c0081ba1dd5d06d6
+    domain: switch
+  - type: turn_on
+    device_id: f9549f4aa4bda5d3c957ac4024f6d889
+    entity_id: 62c205e77f554a8f85a47e7b2f3ac625
+    domain: switch
+  - type: turn_on
+    device_id: f9549f4aa4bda5d3c957ac4024f6d889
+    entity_id: ce761c3516814d79b21ed51d9729e6b0
+    domain: switch
+  - type: turn_on
+    device_id: f9549f4aa4bda5d3c957ac4024f6d889
+    entity_id: 17682a824458a7c8e1c932e6e2cee913
+    domain: switch
+  - type: turn_on
+    device_id: 23a7419de1a5ffc98b7a5a8b244765fa
+    entity_id: 4937f2da43ccfe6b09dfb0c7bdff2356
+    domain: switch
+  - type: turn_on
+    device_id: 7e06e91ef94c8f056b4e71887e44290b
+    entity_id: e6cf8814d79e869863352839e6fd7bf2
+    domain: switch
+  - type: turn_on
+    device_id: 7e06e91ef94c8f056b4e71887e44290b
+    entity_id: c146bd0bab3ffd0a24bb7b828aed6eaa
+    domain: switch
+  - type: turn_on
+    device_id: cde20a7ab87671368844e1f79ff7f4d8
+    entity_id: 93f7b44692c5c23a7d71aac7eb2426d8
+    domain: switch
+  mode: single
+- id: '1700011877909'
+  alias: Boy's Room
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: b786b3773c5526f4c2170f6916236c59
+    entity_id: binary_sensor.boy_s_room_motion_sensor_motion
+    domain: binary_sensor
+    id: Motion Detected
+  - type: no_motion
+    platform: device
+    device_id: b786b3773c5526f4c2170f6916236c59
+    entity_id: binary_sensor.boy_s_room_motion_sensor_motion
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 20
+      seconds: 0
+    id: No Motion Detected 10 mins
+  - platform: state
+    entity_id: input_boolean.boy_s_bedtime_story
+    to: 'on'
+    id: Bedtime Story On
+  - platform: state
+    entity_id: input_boolean.boy_s_bedtime_story
+    to: 'off'
+    id: Bedtime Story Off
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      - condition: time
+        before: '20:29:00'
+        after: 07:20:00
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - sun
+      sequence:
+      - type: turn_on
+        device_id: 1022a76994bc393691ddf00589043df8
+        entity_id: light.kagans_lamp
+        domain: light
+        brightness_pct: 100
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      - condition: time
+        after: 07:00:00
+        before: 07:19:00
+        weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+      sequence:
+      - type: turn_on
+        device_id: 1022a76994bc393691ddf00589043df8
+        entity_id: light.kagans_lamp
+        domain: light
+        brightness_pct: 10
+    - conditions:
+      - condition: trigger
+        id: No Motion Detected 10 mins
+      - condition: not
+        conditions:
+        - condition: time
+          after: '20:30:00'
+          before: 06:30:00
+          weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+          - sat
+          - sun
+      sequence:
+      - type: turn_off
+        device_id: 1022a76994bc393691ddf00589043df8
+        entity_id: light.kagans_lamp
+        domain: light
+      - type: turn_off
+        device_id: 9262ad68408f66758e64c405346ad1db
+        entity_id: a56724c978a3420567059bd0df5f65be
+        domain: light
+      - type: turn_off
+        device_id: 4552b8f5b990787ccf82693fe8fe04c2
+        entity_id: 6d77312219b1e69d8961f1a221a6351b
+        domain: switch
+      - type: turn_off
+        device_id: e2150da5adf724dc5228a23d090a59b9
+        entity_id: 2c6df28a72308f987cd9d7d9b8adf18b
+        domain: switch
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      - condition: time
+        after: 07:20:00
+        before: '21:00:00'
+        weekday:
+        - fri
+      sequence:
+      - type: turn_on
+        device_id: 1022a76994bc393691ddf00589043df8
+        entity_id: light.kagans_lamp
+        domain: light
+        brightness_pct: 100
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      - condition: time
+        after: 09:00:00
+        before: '22:00:00'
+        weekday:
+        - sat
+      sequence:
+      - type: turn_on
+        device_id: 1022a76994bc393691ddf00589043df8
+        entity_id: light.kagans_lamp
+        domain: light
+        brightness_pct: 100
+    - conditions:
+      - condition: trigger
+        id: Motion Detected
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: input_select.home_mode
+          state: Away
+      - condition: time
+        after: 09:00:00
+        before: '20:29:00'
+        weekday:
+        - sat
+        - sun
+      sequence:
+      - type: turn_on
+        device_id: 1022a76994bc393691ddf00589043df8
+        entity_id: light.kagans_lamp
+        domain: light
+        brightness_pct: 100
+    - conditions:
+      - condition: trigger
+        id: Bedtime Story On
+      sequence:
+      - type: turn_off
+        device_id: 1022a76994bc393691ddf00589043df8
+        entity_id: light.kagans_lamp
+        domain: light
+      - type: turn_on
+        device_id: 5f6e8191c369d2fbd2ae750335c3c1da
+        entity_id: 767984a56d1d9f97e32a6d5a7da0f56a
+        domain: light
+        brightness_pct: 25
+      - type: turn_off
+        device_id: e2150da5adf724dc5228a23d090a59b9
+        entity_id: switch.gannon_cloud_light
+        domain: switch
+      - type: turn_off
+        device_id: 4552b8f5b990787ccf82693fe8fe04c2
+        entity_id: switch.kagan_cloud_light
+        domain: switch
+      - service: light.turn_on
+        data:
+          rgb_color:
+          - 190
+          - 56
+          - 243
+          brightness_pct: 82
+        target:
+          entity_id: light.upstairs_hallway_bulb_one
+      - type: turn_off
+        device_id: e848f8de04e2087b21b6aa5607809310
+        entity_id: light.upstairs_living_room_bulb_one
+        domain: light
+      - type: turn_off
+        device_id: d858ca18caf84d1a5e44374583139891
+        entity_id: light.upstairs_living_room_bulb_two
+        domain: light
+      - type: turn_off
+        device_id: 7109a4781de0172bba233b842ced80c5
+        entity_id: light.upstairs_living_room_bulb_three
+        domain: light
+      - type: turn_off
+        device_id: 2526c7d1f587c02f79401fb238aea2fa
+        entity_id: light.upstairs_kitchen_bulb_two
+        domain: light
+      - type: turn_off
+        device_id: 9262ad68408f66758e64c405346ad1db
+        entity_id: a56724c978a3420567059bd0df5f65be
+        domain: light
+      - type: turn_off
+        device_id: 93d91459a50d5271a4b6596e4664816d
+        entity_id: f824aaf1220d1dd1d86332fc16a58766
+        domain: light
+    - conditions:
+      - condition: trigger
+        id: Bedtime Story Off
+      sequence:
+      - type: turn_off
+        device_id: e2150da5adf724dc5228a23d090a59b9
+        entity_id: switch.gannon_cloud_light
+        domain: switch
+      - type: turn_off
+        device_id: 0c22a26d564c934c8885f7b4aacbadd6
+        entity_id: switch.gannons_lamp
+        domain: switch
+      - type: turn_off
+        device_id: 1022a76994bc393691ddf00589043df8
+        entity_id: light.kagans_lamp
+        domain: light
+      - type: turn_off
+        device_id: 4552b8f5b990787ccf82693fe8fe04c2
+        entity_id: switch.kagan_cloud_light
+        domain: switch
+      - type: turn_off
+        device_id: e848f8de04e2087b21b6aa5607809310
+        entity_id: light.upstairs_living_room_bulb_one
+        domain: light
+      - type: turn_off
+        device_id: 7109a4781de0172bba233b842ced80c5
+        entity_id: light.upstairs_living_room_bulb_three
+        domain: light
+      - type: turn_off
+        device_id: d858ca18caf84d1a5e44374583139891
+        entity_id: light.upstairs_living_room_bulb_two
+        domain: light
+      - type: turn_off
+        device_id: 93d91459a50d5271a4b6596e4664816d
+        entity_id: f824aaf1220d1dd1d86332fc16a58766
+        domain: light
+      - type: turn_off
+        device_id: 2526c7d1f587c02f79401fb238aea2fa
+        entity_id: light.upstairs_kitchen_bulb_two
+        domain: light
+      - service: light.turn_on
+        data:
+          rgb_color:
+          - 190
+          - 56
+          - 243
+          brightness_pct: 82
+        target:
+          entity_id: light.upstairs_hallway_bulb_one
+    default: []
+  mode: single
+- id: '1705013035060'
+  alias: Sunrise
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+  condition: []
+  action:
+  - type: turn_off
+    device_id: b4ccc5497f0fe66c0bb27ced33e7483d
+    entity_id: light.back_door_light
+    domain: light
+  - type: turn_off
+    device_id: d2b266d3bbfd4ea2557c21bd8c702082
+    entity_id: switch.front_door_light
+    domain: switch
+  - type: turn_off
+    device_id: 359d4f72aba225bf44e3db716381e3af
+    entity_id: switch.upstairs_fan
+    domain: switch
+  - target:
+      entity_id: group.upstairs_living_room_light
+    data: {}
+    action: homeassistant.turn_off
+  - type: turn_off
+    device_id: 5f6e8191c369d2fbd2ae750335c3c1da
+    entity_id: 767984a56d1d9f97e32a6d5a7da0f56a
+    domain: light
+  - type: turn_off
+    device_id: d8a016ed6a344bb8d45594cd41fbd413
+    entity_id: bb24d7d5634f2c7da9098c57c08ebf1d
+    domain: light
+  - type: turn_off
+    device_id: 4809ea10caf2d54f400cd35905d64474
+    entity_id: 64c756e1a2596513d1accdd64ecea04c
+    domain: light
+  - type: turn_off
+    device_id: b648edfa669a5ea864bd292f38462b07
+    entity_id: light.house_light_one
+    domain: light
+  - type: turn_off
+    device_id: 15ee437678c77bf3ef825538effc9134
+    entity_id: light.house_light_two
+    domain: light
+  - type: turn_off
+    device_id: 3a5bd0fdcea8c2eaadec060ca4c303a9
+    entity_id: light.house_light_three
+    domain: light
+  - type: turn_off
+    device_id: 57608743bb4dc0c3a1ecc4a380456005
+    entity_id: light.house_light_four
+    domain: light
+  - type: turn_off
+    device_id: aed8fe234efb0ada87f680c4b606c82c
+    entity_id: light.house_light_five
+    domain: light
+  - type: turn_off
+    device_id: 11c75f782f74e024c2ba4206982a9a70
+    entity_id: light.house_light_six
+    domain: light
+  - type: turn_off
+    device_id: 585b3b92417dbc0352f34acdcfb37eec
+    entity_id: light.house_light_seven
+    domain: light
+  - type: turn_off
+    device_id: 25329b7610513967ea73ec5ddf5ed579
+    entity_id: 9c21a3090b8aa48dc9ea47856fee8967
+    domain: switch
+  - type: turn_off
+    device_id: 25329b7610513967ea73ec5ddf5ed579
+    entity_id: 1bdcedeb120d315208d7d53face7e166
+    domain: switch
+  - type: turn_off
+    device_id: 25329b7610513967ea73ec5ddf5ed579
+    entity_id: b965bec622eccb7914c852e2b9c4f843
+    domain: switch
+  - type: turn_off
+    device_id: 25329b7610513967ea73ec5ddf5ed579
+    entity_id: fd682ce4b0fc8cbb563796c13f4539f4
+    domain: switch
+  - type: turn_off
+    device_id: f9549f4aa4bda5d3c957ac4024f6d889
+    entity_id: 36e9985c401824c2c0081ba1dd5d06d6
+    domain: switch
+  - type: turn_off
+    device_id: f9549f4aa4bda5d3c957ac4024f6d889
+    entity_id: 62c205e77f554a8f85a47e7b2f3ac625
+    domain: switch
+  - type: turn_off
+    device_id: f9549f4aa4bda5d3c957ac4024f6d889
+    entity_id: ce761c3516814d79b21ed51d9729e6b0
+    domain: switch
+  - type: turn_off
+    device_id: f9549f4aa4bda5d3c957ac4024f6d889
+    entity_id: 17682a824458a7c8e1c932e6e2cee913
+    domain: switch
+  - type: turn_off
+    device_id: 8e1c850771d6cfb4312445b15ea122ff
+    entity_id: e646a5ea1f654a9f1bd3249b2005ab6e
+    domain: switch
+  - type: turn_off
+    device_id: 23a7419de1a5ffc98b7a5a8b244765fa
+    entity_id: 4937f2da43ccfe6b09dfb0c7bdff2356
+    domain: switch
+  - type: turn_off
+    device_id: fcc7110b8cb1be51796f3c0585a0a454
+    entity_id: 320914c9a38604434738ffa9cdb32df6
+    domain: light
+  - type: turn_off
+    device_id: 1022a76994bc393691ddf00589043df8
+    entity_id: light.kagans_lamp
+    domain: light
+  - type: turn_off
+    device_id: 9262ad68408f66758e64c405346ad1db
+    entity_id: a56724c978a3420567059bd0df5f65be
+    domain: light
+  - type: turn_off
+    device_id: 5f6e8191c369d2fbd2ae750335c3c1da
+    entity_id: light.boy_s_night_light
+    domain: light
+  - type: turn_off
+    device_id: 4552b8f5b990787ccf82693fe8fe04c2
+    entity_id: switch.kagan_cloud_light
+    domain: switch
+  - type: turn_off
+    device_id: e2150da5adf724dc5228a23d090a59b9
+    entity_id: switch.gannon_cloud_light
+    domain: switch
+  mode: single
+- id: '1710698620199'
+  alias: Backdoor Pico
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 44e05e1869bb29656330afaf2afde6e9
+    domain: lutron_caseta
+    type: press
+    subtype: 'on'
+    id: Backdoor Light On
+  - platform: device
+    device_id: 44e05e1869bb29656330afaf2afde6e9
+    domain: lutron_caseta
+    type: press
+    subtype: 'off'
+    id: Backdoor Light Off
+  - platform: device
+    device_id: 44e05e1869bb29656330afaf2afde6e9
+    domain: lutron_caseta
+    type: press
+    subtype: stop
+    id: Backdoor Fav Pressed
+  - platform: device
+    device_id: 44e05e1869bb29656330afaf2afde6e9
+    domain: lutron_caseta
+    type: press
+    subtype: raise
+    id: Backdoor Raise
+  - platform: device
+    device_id: 44e05e1869bb29656330afaf2afde6e9
+    domain: lutron_caseta
+    type: press
+    subtype: lower
+    id: Backdoor Dim
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id:
+        - Backdoor Light On
+      sequence:
+      - type: turn_on
+        device_id: b4ccc5497f0fe66c0bb27ced33e7483d
+        entity_id: e775b2b5c4542e34535dd9d1e4dc525c
+        domain: light
+        brightness_pct: 100
+    - conditions:
+      - condition: trigger
+        id:
+        - Backdoor Light Off
+      sequence:
+      - type: turn_off
+        device_id: b4ccc5497f0fe66c0bb27ced33e7483d
+        entity_id: e775b2b5c4542e34535dd9d1e4dc525c
+        domain: light
+    - conditions:
+      - condition: trigger
+        id:
+        - Backdoor Raise
+      sequence:
+      - device_id: b4ccc5497f0fe66c0bb27ced33e7483d
+        domain: light
+        entity_id: e775b2b5c4542e34535dd9d1e4dc525c
+        type: brightness_increase
+    - conditions:
+      - condition: trigger
+        id:
+        - Backdoor Dim
+      sequence:
+      - device_id: b4ccc5497f0fe66c0bb27ced33e7483d
+        domain: light
+        entity_id: e775b2b5c4542e34535dd9d1e4dc525c
+        type: brightness_decrease
+  mode: single
+- id: '1727545951176'
+  alias: Kitchen Pico
+  description: ''
+  trigger:
+  - platform: device
+    device_id: ea3b6786838f4bfc821bb15233ec70a3
+    domain: lutron_caseta
+    type: press
+    subtype: 'on'
+    id: Pico On
+  - platform: device
+    device_id: ea3b6786838f4bfc821bb15233ec70a3
+    domain: lutron_caseta
+    type: press
+    subtype: 'off'
+    id: Pico Off
+  - platform: device
+    device_id: ea3b6786838f4bfc821bb15233ec70a3
+    domain: lutron_caseta
+    type: press
+    subtype: lower
+    id: Pico Dim
+  - platform: device
+    device_id: ea3b6786838f4bfc821bb15233ec70a3
+    domain: lutron_caseta
+    type: press
+    subtype: raise
+    id: Pico Raise
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id:
+        - Pico On
+      sequence:
+      - type: turn_on
+        device_id: efbb8dc0d9989b53a819d76ed73438ab
+        entity_id: a33753ac99484ef1d688334986b12174
+        domain: light
+    - conditions:
+      - condition: trigger
+        id:
+        - Pico Off
+      sequence:
+      - type: turn_off
+        device_id: efbb8dc0d9989b53a819d76ed73438ab
+        entity_id: a33753ac99484ef1d688334986b12174
+        domain: light
+    - conditions:
+      - condition: trigger
+        id:
+        - Pico Dim
+      sequence:
+      - device_id: efbb8dc0d9989b53a819d76ed73438ab
+        domain: light
+        entity_id: a33753ac99484ef1d688334986b12174
+        type: brightness_decrease
+    - conditions:
+      - condition: trigger
+        id:
+        - Pico Raise
+      sequence:
+      - device_id: efbb8dc0d9989b53a819d76ed73438ab
+        domain: light
+        entity_id: a33753ac99484ef1d688334986b12174
+        type: brightness_increase
+  mode: single
+- id: '1727546857493'
+  alias: Backroom Pico Two
+  description: ''
+  trigger:
+  - platform: device
+    device_id: f681b2f9eba044772d78f649022604e4
+    domain: lutron_caseta
+    type: press
+    subtype: 'on'
+    id: Backroom Pico Two On
+  - platform: device
+    device_id: f681b2f9eba044772d78f649022604e4
+    domain: lutron_caseta
+    type: press
+    subtype: 'off'
+    id: Backroom Pico Two Off
+  - platform: device
+    device_id: f681b2f9eba044772d78f649022604e4
+    domain: lutron_caseta
+    type: press
+    subtype: raise
+    id: Backroom Pico Two Raised
+  - platform: device
+    device_id: f681b2f9eba044772d78f649022604e4
+    domain: lutron_caseta
+    type: press
+    subtype: lower
+    id: Backroom Pico Two Dim
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id:
+        - Backroom Pico Two On
+      sequence:
+      - type: turn_on
+        device_id: bfc5e45961b0bea253118129b4707cdc
+        entity_id: 481a17fe660e6b401a86548611267948
+        domain: light
+    - conditions:
+      - condition: trigger
+        id:
+        - Backroom Pico Two Off
+      sequence:
+      - type: turn_off
+        device_id: bfc5e45961b0bea253118129b4707cdc
+        entity_id: 481a17fe660e6b401a86548611267948
+        domain: light
+    - conditions:
+      - condition: trigger
+        id:
+        - Backroom Pico Two Raised
+      sequence:
+      - device_id: bfc5e45961b0bea253118129b4707cdc
+        domain: light
+        entity_id: 481a17fe660e6b401a86548611267948
+        type: brightness_increase
+    - conditions:
+      - condition: trigger
+        id:
+        - Backroom Pico Two Dim
+      sequence:
+      - device_id: bfc5e45961b0bea253118129b4707cdc
+        domain: light
+        entity_id: 481a17fe660e6b401a86548611267948
+        type: brightness_decrease
+  mode: single
+- id: '1727547072068'
+  alias: Backroom Pico One
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 53031a874356d9173c8ed4a211f7aecc
+    domain: lutron_caseta
+    type: press
+    subtype: 'on'
+    id: Backroom Pico One On
+  - platform: device
+    device_id: 53031a874356d9173c8ed4a211f7aecc
+    domain: lutron_caseta
+    type: press
+    subtype: 'off'
+    id: Backroom Pico One Off
+  - platform: device
+    device_id: 53031a874356d9173c8ed4a211f7aecc
+    domain: lutron_caseta
+    type: press
+    subtype: raise
+    id: Backroom Pico One Raised
+  - platform: device
+    device_id: 53031a874356d9173c8ed4a211f7aecc
+    domain: lutron_caseta
+    type: press
+    subtype: lower
+    id: Backroom Pico One Dim
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id:
+        - Backroom Pico One On
+      sequence:
+      - type: turn_on
+        device_id: bfc5e45961b0bea253118129b4707cdc
+        entity_id: 481a17fe660e6b401a86548611267948
+        domain: light
+    - conditions:
+      - condition: trigger
+        id:
+        - Backroom Pico One Off
+      sequence:
+      - type: turn_off
+        device_id: bfc5e45961b0bea253118129b4707cdc
+        entity_id: 481a17fe660e6b401a86548611267948
+        domain: light
+    - conditions:
+      - condition: trigger
+        id:
+        - Backroom Pico One Raised
+      sequence:
+      - device_id: bfc5e45961b0bea253118129b4707cdc
+        domain: light
+        entity_id: 481a17fe660e6b401a86548611267948
+        type: brightness_increase
+    - conditions:
+      - condition: trigger
+        id:
+        - Backroom Pico One Dim
+      sequence:
+      - device_id: bfc5e45961b0bea253118129b4707cdc
+        domain: light
+        entity_id: 481a17fe660e6b401a86548611267948
+        type: brightness_decrease
+  mode: single
+- id: '1727548184888'
+  alias: Stairs Pico
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 1c7c3de1b187c0eca7b30a7f17e2342b
+    domain: lutron_caseta
+    type: press
+    subtype: 'on'
+    id: Stairs Pico ON
+  - platform: device
+    device_id: 1c7c3de1b187c0eca7b30a7f17e2342b
+    domain: lutron_caseta
+    type: press
+    subtype: 'off'
+    id: Stairs Pico Off
+  - platform: device
+    device_id: 1c7c3de1b187c0eca7b30a7f17e2342b
+    domain: lutron_caseta
+    type: press
+    subtype: raise
+    id: Stairs Pico Raised
+  - platform: device
+    device_id: 1c7c3de1b187c0eca7b30a7f17e2342b
+    domain: lutron_caseta
+    type: press
+    subtype: lower
+    id: Stairs Pico Dim
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id:
+        - Stairs Pico ON
+      sequence:
+      - type: turn_on
+        device_id: 93bea657372f749a914324e732564664
+        entity_id: 962bfc6f95403f77398ca36998881fc9
+        domain: light
+        brightness_pct: 100
+      - type: turn_on
+        device_id: e52bfd551c4d0d60fc09bcdb3c5364fb
+        entity_id: d77ae05b2444dcd6dae335488f99aec2
+        domain: light
+        brightness_pct: 100
+    - conditions:
+      - condition: trigger
+        id:
+        - Stairs Pico Off
+      sequence:
+      - type: turn_off
+        device_id: 93bea657372f749a914324e732564664
+        entity_id: 962bfc6f95403f77398ca36998881fc9
+        domain: light
+      - type: turn_off
+        device_id: e52bfd551c4d0d60fc09bcdb3c5364fb
+        entity_id: d77ae05b2444dcd6dae335488f99aec2
+        domain: light
+    - conditions:
+      - condition: trigger
+        id:
+        - Stairs Pico Raised
+      sequence:
+      - device_id: e52bfd551c4d0d60fc09bcdb3c5364fb
+        domain: light
+        entity_id: d77ae05b2444dcd6dae335488f99aec2
+        type: brightness_increase
+      - device_id: 93bea657372f749a914324e732564664
+        domain: light
+        entity_id: 962bfc6f95403f77398ca36998881fc9
+        type: brightness_increase
+    - conditions:
+      - condition: trigger
+        id:
+        - Stairs Pico Dim
+      sequence:
+      - device_id: e52bfd551c4d0d60fc09bcdb3c5364fb
+        domain: light
+        entity_id: d77ae05b2444dcd6dae335488f99aec2
+        type: brightness_decrease
+      - device_id: 93bea657372f749a914324e732564664
+        domain: light
+        entity_id: 962bfc6f95403f77398ca36998881fc9
+        type: brightness_decrease
+  mode: single
+- id: '1728057062035'
+  alias: Living Room
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 8bfeecc3f1018f6aad17d976438f876f
+    domain: lutron_caseta
+    type: press
+    subtype: 'on'
+    id: Living Room Pico On Pressed
+  - platform: device
+    device_id: 8bfeecc3f1018f6aad17d976438f876f
+    domain: lutron_caseta
+    type: press
+    subtype: 'off'
+    id: Living Room Pico Off Pressed
+  - platform: device
+    device_id: 8bfeecc3f1018f6aad17d976438f876f
+    domain: lutron_caseta
+    type: press
+    subtype: raise
+    id: Living Room Pico Raised Pressed
+  - platform: device
+    device_id: 8bfeecc3f1018f6aad17d976438f876f
+    domain: lutron_caseta
+    type: press
+    subtype: lower
+    id: Living Room Pico Lower Pressed
+  - platform: device
+    device_id: 8bfeecc3f1018f6aad17d976438f876f
+    domain: lutron_caseta
+    type: press
+    subtype: stop
+    id: Living Room Pico Fav Pressed
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id:
+        - Living Room Pico On Pressed
+      sequence:
+      - type: turn_on
+        device_id: 4a63886e901ee8e60dd20eb5028ad82b
+        entity_id: ec9dbd6dd589e56b28fd36f38d82619d
+        domain: light
+        brightness_pct: 100
+      - type: turn_on
+        device_id: ff5e710409eaeeed811a9407d2a69c25
+        entity_id: c42b44a6bae82cea1e32fc71511772b0
+        domain: light
+        brightness_pct: 100
+      - type: turn_on
+        device_id: 9d76fa8218b393b52fac4cc84ba2a1aa
+        entity_id: da94be94f15bbc6e3663739027c71ef7
+        domain: light
+        brightness_pct: 100
+    - conditions:
+      - condition: trigger
+        id:
+        - Living Room Pico Off Pressed
+      sequence:
+      - type: turn_off
+        device_id: 4a63886e901ee8e60dd20eb5028ad82b
+        entity_id: ec9dbd6dd589e56b28fd36f38d82619d
+        domain: light
+      - type: turn_off
+        device_id: ff5e710409eaeeed811a9407d2a69c25
+        entity_id: c42b44a6bae82cea1e32fc71511772b0
+        domain: light
+      - type: turn_off
+        device_id: 9d76fa8218b393b52fac4cc84ba2a1aa
+        entity_id: da94be94f15bbc6e3663739027c71ef7
+        domain: light
+    - conditions:
+      - condition: trigger
+        id:
+        - Living Room Pico Raised Pressed
+      sequence:
+      - device_id: 4a63886e901ee8e60dd20eb5028ad82b
+        domain: light
+        entity_id: ec9dbd6dd589e56b28fd36f38d82619d
+        type: brightness_increase
+      - device_id: ff5e710409eaeeed811a9407d2a69c25
+        domain: light
+        entity_id: c42b44a6bae82cea1e32fc71511772b0
+        type: brightness_increase
+      - device_id: 9d76fa8218b393b52fac4cc84ba2a1aa
+        domain: light
+        entity_id: da94be94f15bbc6e3663739027c71ef7
+        type: brightness_increase
+    - conditions:
+      - condition: trigger
+        id:
+        - Living Room Pico Lower Pressed
+      sequence:
+      - device_id: 4a63886e901ee8e60dd20eb5028ad82b
+        domain: light
+        entity_id: ec9dbd6dd589e56b28fd36f38d82619d
+        type: brightness_decrease
+      - device_id: ff5e710409eaeeed811a9407d2a69c25
+        domain: light
+        entity_id: c42b44a6bae82cea1e32fc71511772b0
+        type: brightness_decrease
+      - device_id: 9d76fa8218b393b52fac4cc84ba2a1aa
+        domain: light
+        entity_id: da94be94f15bbc6e3663739027c71ef7
+        type: brightness_decrease
+  mode: single
+- id: '1728414744013'
+  alias: Rosey Vacuum
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - input_button.vacuum_backroom
+    id: Vacuum Backroom
+    from:
+  - trigger: state
+    entity_id:
+    - input_button.vacuum_kitchen
+    id: Vacuum Kitchen
+    from:
+  - trigger: state
+    entity_id:
+    - input_button.vacuum_dining_room
+    id: Vacuum Dining Room
+    from:
+  - trigger: state
+    entity_id:
+    - input_button.vacuum_living_room
+    id: Vacuum Living Room
+  - trigger: state
+    entity_id:
+    - input_button.vacuum_whole_house
+    id: Vacuum Whole House
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: trigger
+        id:
+        - Vacuum Backroom
+      sequence:
+      - action: vacuum.send_command
+        metadata: {}
+        data:
+          command: app_segment_clean
+          params:
+          - segments:
+            - 21
+            repeat: 2
+        target:
+          entity_id: vacuum.rosey
+    - conditions:
+      - condition: trigger
+        id:
+        - Vacuum Kitchen
+      sequence:
+      - action: vacuum.send_command
+        metadata: {}
+        data:
+          command: app_segment_clean
+          params:
+          - segments:
+            - 22
+            repeat: 2
+        target:
+          entity_id: vacuum.rosey
+    - conditions:
+      - condition: trigger
+        id:
+        - Vacuum Dining Room
+      sequence:
+      - action: vacuum.send_command
+        metadata: {}
+        data:
+          command: app_segement_clean
+          params:
+          - segments:
+            - 17
+            repeat: 2
+        target:
+          entity_id: vacuum.rosey
+    - conditions:
+      - condition: trigger
+        id:
+        - Vacuum Living Room
+      sequence:
+      - action: vacuum.send_command
+        metadata: {}
+        data:
+          command: app_segment_clean
+          params:
+          - segments:
+            - 23
+            repeat: 2
+        target:
+          entity_id: vacuum.rosey
+    - conditions:
+      - condition: trigger
+        id:
+        - Vacuum Whole House
+      sequence:
+      - device_id: 5889386601f5f950034f18f3552c1845
+        domain: vacuum
+        entity_id: ba00c2851bf5da7f09338c29b94c8a14
+        type: clean
+  mode: single

@@ -1,0 +1,15 @@
+id: '1599528072991'
+alias: Vacation Boy's Light
+description: ''
+trigger:
+- entity_id: sensor.vacation_boys_room_light
+  platform: state
+condition:
+- condition: state
+  entity_id: input_boolean.vacation_mode
+  state: 'on'
+action:
+- data: {}
+  entity_id: light.boys_room_light
+  service: light.toggle
+mode: single

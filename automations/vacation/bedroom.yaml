@@ -1,0 +1,15 @@
+id: '1599528072990'
+alias: Vacation Bedroom Light
+description: ''
+trigger:
+- entity_id: sensor.vacation_bedroom
+  platform: state
+condition:
+- condition: state
+  entity_id: input_boolean.vacation_mode
+  state: 'on'
+action:
+- data: {}
+  entity_id: light.bedroom_lights
+  service: light.toggle
+mode: single

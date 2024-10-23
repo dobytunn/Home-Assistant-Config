@@ -1,0 +1,12 @@
+calendar:
+  - platform: caldav
+    url: https://caldav.icloud.com
+    username: !secret icloud_u
+    password: !secret icloud_c
+    calendars:
+      - Tobin
+      - Keely
+      - Gannon
+      - Kagan
+      - Teagan
+      - Family

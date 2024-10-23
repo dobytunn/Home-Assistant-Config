@@ -1,0 +1,4 @@
+ombi:
+  host: 10.0.101.118
+  username: !secret ombi_user
+  password: !secret ombi_pass

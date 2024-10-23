@@ -1,0 +1,16 @@
+# These are wild cards to be backed up
+!*.yaml
+!.gitignore
+!*.md
+!*.sh
+!*.js*
+
+# These are ignored files
+secrets.yaml
+*.db
+.ssh
+.storage
+.cloud
+.goolge.token
+home-assistant.log
+id_rsa*

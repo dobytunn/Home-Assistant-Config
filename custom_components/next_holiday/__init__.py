@@ -1,0 +1,1 @@
+"""Next holiday sensor."""

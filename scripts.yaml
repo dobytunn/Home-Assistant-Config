@@ -1,0 +1,226 @@
+'1588533075539':
+  alias: Top Rated Music Bar Echo
+  sequence:
+  - data:
+      entity_id: media_player.bar_echo
+      media_content_id: Top_Rated
+      media_content_type: APPLE_MUSIC
+    entity_id: media_player.bar_echo
+    service: media_player.media_play
+'15885330757987':
+  alias: Top Rated Music Bar Music
+  sequence:
+  - data:
+      entity_id: media_player.bar_music
+      media_content_id: Top_Rated
+      media_content_type: APPLE_MUSIC
+    entity_id: media_player.bar_music
+    service: media_player.media_play
+'1588533075540':
+  alias: Ender3 Safe Power Down
+  sequence:
+  - condition: state
+    entity_id: binary_sensor.ender3_printing
+    state: 'off'
+  - service: rest_command.ender3_octoprint_shutdown
+    data: {}
+  - delay:
+      seconds: 20
+  - service: switch.turn_off
+    data:
+      entity_id: switch.3d_printer_psu
+'1588533075541':
+  alias: Ender3 Cancel
+  sequence:
+  - condition: state
+    entity_id: switch.ender3_controls
+    state: 'on'
+  - service: rest_command.ender3_job_command
+    data:
+      payload: '{"command": "cancel"}'
+'1588533075542':
+  alias: Ender3 Pause
+  sequence:
+  - condition: state
+    entity_id: swtich.ender3_controls
+    state: 'on'
+  - service: rest_command.ender3_job_command
+    data:
+      payload: '{"command": "pause", "action": "pause"}'
+'1588533075543':
+  alias: Ener3 Resume
+  sequence:
+  - condition: state
+    entity_id: switch.ender3_controls
+    state: 'on'
+  - service: rest_command.ender3_job_command
+    data:
+      payload: '{"command": "pause", "action": "resume"}'
+add_point_gc:
+  sequence:
+  - service: counter.increment
+    target:
+      entity_id: counter.gannon_chore_counter
+  mode: single
+  alias: Add Point GC
+  icon: hass:plus-thick
+add_point_kc:
+  alias: Add Point KC
+  sequence:
+  - service: counter.increment
+    target:
+      entity_id: counter.kagan_chore_counter
+  mode: single
+  icon: hass:plus-thick
+add_point_tc:
+  alias: Add Point TC
+  sequence:
+  - service: counter.increment
+    target:
+      entity_id: counter.teagan_chore_counter
+  mode: single
+  icon: hass:plus-thick
+remove_point_gc:
+  sequence:
+  - service: counter.decrement
+    target:
+      entity_id: counter.gannon_chore_counter
+  mode: single
+  alias: Remove Point GC
+  icon: hass:minus-thick
+remove_point_kc:
+  alias: Remove Point KC
+  sequence:
+  - service: counter.decrement
+    target:
+      entity_id: counter.kagan_chore_counter
+  mode: single
+  icon: hass:minus-thick
+remove_point_tc:
+  alias: Remove Point TC
+  sequence:
+  - service: counter.decrement
+    target:
+      entity_id: counter.teagan_chore_counter
+  mode: single
+  icon: hass:minus-thick
+reset_points_gc:
+  sequence:
+  - service: counter.reset
+    target:
+      entity_id: counter.gannon_chore_counter
+  mode: single
+  alias: Reset Points GC
+  icon: hass:backup-restore
+reset_points_kc:
+  alias: Reset Points KC
+  sequence:
+  - service: counter.reset
+    target:
+      entity_id: counter.kagan_chore_counter
+  mode: single
+  icon: hass:backup-restore
+reset_points_tc:
+  alias: Reset Points TC
+  sequence:
+  - service: counter.reset
+    target:
+      entity_id: counter.teagan_chore_counter
+  mode: single
+  icon: hass:backup-restore
+add_point_mc:
+  alias: Add Point MC
+  sequence:
+  - service: counter.increment
+    target:
+      entity_id: counter.marcial_s_chore_counter
+  mode: single
+  icon: hass:plus-thick
+remove_point_mc:
+  alias: Remove Point MC
+  sequence:
+  - service: counter.decrement
+    target:
+      entity_id: counter.marcial_s_chore_counter
+  mode: single
+  icon: hass:minus-thick
+reset_points_mc:
+  alias: Reset Points MC
+  sequence:
+  - service: counter.reset
+    target:
+      entity_id: counter.marcial_s_chore_counter
+  mode: single
+  icon: hass:backup-restore
+add_1_ga:
+  alias: Add $1 GA
+  sequence:
+  - service: counter.increment
+    target:
+      entity_id: counter.gannon_s_allowance_counter
+  mode: single
+  icon: hass:plus-thick
+add_1_ka:
+  alias: Add $1 KA
+  sequence:
+  - service: counter.increment
+    target:
+      entity_id: counter.kagan_s_allowance_counter
+  mode: single
+  icon: hass:plus-thick
+add_1_ta:
+  alias: Add $1 TA
+  sequence:
+  - service: counter.increment
+    target:
+      entity_id: counter.teagan_s_allowance_counter
+  mode: single
+  icon: hass:plus-thick
+remove_1_ka:
+  alias: Remove $1 KA
+  sequence:
+  - service: counter.decrement
+    target:
+      entity_id: counter.kagan_s_allowance_counter
+  mode: single
+  icon: hass:minus-thick
+remove_1_ta:
+  alias: Remove $1 TA
+  sequence:
+  - service: counter.decrement
+    target:
+      entity_id: counter.teagan_s_allowance_counter
+  mode: single
+  icon: hass:minus-thick
+remove_1_ga:
+  alias: Remove $1 GA
+  sequence:
+  - service: counter.decrement
+    target:
+      entity_id: counter.gannon_s_allowance_counter
+  mode: single
+  icon: hass:minus-thick
+reset_allowance_ga:
+  alias: Reset Allowance GA
+  sequence:
+  - service: counter.reset
+    target:
+      entity_id: counter.gannon_s_allowance_counter
+  mode: single
+  icon: hass:backup-restore
+reset_allowance_ka:
+  alias: Reset Allowance KA
+  sequence:
+  - service: counter.reset
+    target:
+      entity_id: counter.kagan_s_allowance_counter
+  mode: single
+  icon: hass:backup-restore
+reset_allowance_ta:
+  alias: Reset Allowance TA
+  sequence:
+  - service: counter.reset
+    target:
+      entity_id: counter.teagan_s_allowance_counter
+  mode: single
+  icon: hass:backup-restore

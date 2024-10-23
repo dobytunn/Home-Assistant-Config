@@ -1,0 +1,33 @@
+switch:
+  - platform: flux
+    lights:
+      - light.basement_landing_light
+      - light.back_room_light
+      - light.kitchen_bulb_one
+      - light.kitchen_bulb_two
+      - light.kitchen_color_bulb
+      - light.living_room_bulb_one
+      - light.living_room_bulb_two
+      - light.living_room_bulb_three
+      - light.toy_room_light
+      - light.teagans_light
+      - light.teagans_lamp
+      - light.hallway_light
+      - light.tobins_lamp
+      - light.keelys_lamp
+      - light.upstairs_bathroom_bulb_one
+      - light.upstairs_bathroom_bulb_two
+      - light.upstairs_landing_light
+      - light.upstairs_kitchen_bulb_one
+      - light.upstairs_kitchen_bulb_two
+      - light.upstairs_living_room_bulb_one
+      - light.upstairs_living_room_bulb_two
+      - light.upstairs_living_room_bulb_three
+      - light.upstairs_hallway_bulb_one
+      - light.boys_room_lamp
+      - light.marcials_light
+      - light.basement_bulb_one
+      - light.keelys_office_light
+      - light.laundry_room_light_one
+      - light.laundry_room_light_two
+      - light.office_light

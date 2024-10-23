@@ -1,0 +1,152 @@
+# https://dwainscheeren.github.io/dwains-lovelace-dashboard/configuration/rooms.html
+
+rooms:
+  - name: Backroom
+    icon: hue:ceiling-flourish
+    light: light.back_room_light
+#    temperature: sensor.back_room_motion_sensor_temperature
+#     climate: climate.hallway_climate
+#     humidity: sensor.halway_humidity
+#    motion: binary_sensor.hallway_motion_sensor_motion
+#     door: binary_sensor.hallway_door_contact
+    window: binary_sensor.hallway_window_contact
+#     safety: sensor.smoke_sensor
+#     device: switch.television
+#     vacuum: 
+#       entity: vacuum.rockrobo
+#       camera: camera.rockrobo_map
+#     plant: plant.hallway_plant
+#     media_player: media_player.awesome_hallway_tv
+#     more_entities:
+#       entities:
+#         - entity: sensor.hallway_motion_battery_level
+#         - entity: sensor.smokedetector_battery
+  - name: Basement Landing
+    icon: hue:ceiling-flourish
+    light: light.basement_landing_light
+    temperature: sensor.basement_landing_motion_sensor_temperature
+#     climate: climate.hallway_climate
+#     humidity: sensor.halway_humidity
+    motion: binary_sensor.basement_landing_motion_sensor_motion
+#     door: binary_sensor.hallway_door_contact
+#     window: binary_sensor.hallway_window_contact
+#     safety: sensor.smoke_sensor
+#     device: switch.television
+#     vacuum: 
+#       entity: vacuum.rockrobo
+#       camera: camera.rockrobo_map
+#     plant: plant.hallway_plant
+#     media_player: media_player.awesome_hallway_tv
+#     more_entities:
+#       entities:
+#         - entity: sensor.hallway_motion_battery_level
+#         - entity: sensor.smokedetector_battery
+  - name: Back Door
+    icon: mdi:door
+#    light: light.basement_landing_light
+#    temperature: sensor.basement_landing_motion_sensor_temperature
+#     climate: climate.hallway_climate
+#     humidity: sensor.halway_humidity
+#    motion: binary_sensor.basement_landing_motion_sensor_motion
+    door: binary_sensor.back_door_open
+    lock: lock.back_door
+#     window: binary_sensor.hallway_window_contact
+#     safety: sensor.smoke_sensor
+#     device: switch.television
+#     vacuum: 
+#       entity: vacuum.rockrobo
+#       camera: camera.rockrobo_map
+#     plant: plant.hallway_plant
+#     media_player: media_player.awesome_hallway_tv
+#     more_entities:
+#       entities:
+#         - entity: sensor.hallway_motion_battery_level
+#         - entity: sensor.smokedetector_battery
+  - name: Kitchen
+    icon: mdi:stove
+    light: group.kitchen_light
+    temperature: sensor.kitchen_motion_sensor_temperature
+#     climate: climate.hallway_climate
+#     humidity: sensor.halway_humidity
+    motion: binary_sensor.kitchen_motion_sensor_motion
+#    door: binary_sensor.back_door_open
+#    lock: lock.back_door
+#     window: binary_sensor.hallway_window_contact
+#     safety: sensor.smoke_sensor
+#     device: switch.television
+#     vacuum: 
+#       entity: vacuum.rockrobo
+#       camera: camera.rockrobo_map
+#     plant: plant.hallway_plant
+#     media_player: media_player.awesome_hallway_tv
+#     more_entities:
+#       entities:
+#         - entity: sensor.hallway_motion_battery_level
+#         - entity: sensor.smokedetector_battery
+  - name: Dining Room
+    icon: fas:utensils
+    light: group.kitchen_light
+    temperature: sensor.thermostat_temperature
+    climate: climate.thermostat
+    humidity: sensor.thermostat_humidity
+#    motion: binary_sensor.kitchen_motion_sensor_motion
+#    door: binary_sensor.back_door_open
+#    lock: lock.back_door
+#     window: binary_sensor.hallway_window_contact
+#     safety: sensor.smoke_sensor
+#     device: switch.television
+#     vacuum: 
+#       entity: vacuum.rockrobo
+#       camera: camera.rockrobo_map
+#     plant: plant.hallway_plant
+#     media_player: media_player.awesome_hallway_tv
+#     more_entities:
+#       entities:
+#         - entity: sensor.hallway_motion_battery_level
+#         - entity: sensor.smokedetector_battery
+  - name: Hallway
+    icon: hue:ceiling-flourish
+    light: light.hallway_light
+    temperature: sensor.hallway_motion_sensor_temperature
+#     climate: climate.hallway_climate
+#     humidity: sensor.halway_humidity
+    motion: binary_sensor.hallway_motion_sensor_motion
+#     door: binary_sensor.hallway_door_contact
+#     window: binary_sensor.hallway_window_contact
+#     safety: sensor.smoke_sensor
+#     device: switch.television
+#     vacuum: 
+#       entity: vacuum.rockrobo
+#       camera: camera.rockrobo_map
+#     plant: plant.hallway_plant
+#     media_player: media_player.awesome_hallway_tv
+#     more_entities:
+#       entities:
+#         - entity: sensor.hallway_motion_battery_level
+#         - entity: sensor.smokedetector_battery
+  - name: Garage
+    icon: mdi:garage
+    light: group.garage_lights
+    cover: cover.garage_door
+#     door: group.garage_doors
+#     addons:
+#       - name: Hello room
+#         icon: mdi:puzzle
+#         path: 'dwains-dashboard/addons/rooms/hello-room/page.yaml'
+#         button_path: 'dwains-dashboard/addons/rooms/hello-room/button.yaml'
+#         data:
+#           some_data: 'This is some data parsed.'
+#           some_other_data: 'and some other data.'
+#           entity: vacuum.roborock
+#   - name: Bedroom
+#     icon: fal:bed
+#     more_entities:
+#       columns: 2 #optional
+#       entities:
+#         - entity: sensor.name1
+#         - entity: sensor.name2
+#     page_entities:
+#       columns: 1 #optional
+#       entities:
+#         - entity: sensor.name1
+#         - entity: sensor.name2

@@ -1,0 +1,39 @@
+{
+    "title": "Hubspace",
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "username": "[%key:common::config_flow::data::username%]",
+                    "password": "[%key:common::config_flow::data::password%]",
+                    "timeout": "[%key:common::config_flow::data::password%]"
+                }
+            }
+        },
+        "error": {
+            "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
+            "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
+            "unknown": "[%key:common::config_flow::error::unknown%]"
+        }
+    },
+    "services": {
+        "send_command": {
+            "name": "Send Command",
+            "description": "Sends a custom hubspace API command.",
+            "fields": {
+                "value": {
+                    "name": "Value",
+                    "description": "The value you want to send"
+                },
+                "function_class": {
+                    "name": "Function Class",
+                    "description": "functionClass you want to send"
+                },
+                "function_instance": {
+                    "name": "Function Instance",
+                    "description": "functionInstance you want to send"
+                }
+            }
+        }
+    }
+}

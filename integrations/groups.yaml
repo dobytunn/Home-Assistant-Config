@@ -1,0 +1,473 @@
+group:
+  living_room:
+    name: Living Room
+    entities:
+      - light.living_room_light
+      - remote.living_room_hub
+    icon: mdi:television
+  dining_room_light:
+    name: Dining Room Light
+    entities:
+      - light.dining_room_light_switch
+  dining_room:
+    name: Dining Room
+    entities:
+      - light.dining_room_light
+      - switch.book_shelf_light
+  teagans_room_lights:
+    name: "Teagan's Room Lights"
+    entities:
+      - light.teagans_light
+      - light.teagans_lamp
+      - light.teagans_night_light_two
+      - switch.lava_lamp
+      - switch.owl
+  teagans_room:
+    name: "Teagan's Room"
+    entities:
+      - light.teagans_light
+      - light.teagans_lamp
+      - light.teagans_night_light_two
+      - switch.lava_lamp
+      - switch.owl
+      - switch.teagans_fan
+      - switch.heart
+  kitchen:
+    name: Kitchen
+    entities:
+      - light.kitchen_light
+  boys_room_lights:
+    name: Boys Room Lights
+    entities:
+      - light.boys_lamp
+  boys_room:
+    name: Boys Room
+    entities:
+      - light.boys_room_lamp
+      - switch.gannons_fan
+      - switch.gannon_cloud_light
+      - switch.kagans_fan
+      - switch.kagan_cloud_light
+      - light.boys_night_light
+  upstairs_hallway_light:
+    name: Upstairs Hallway Light
+    entities:
+      - light.upstairs_hallway_bulb_one
+  bedroom:
+    name: Bedroom
+    entities:
+      - group.bedroom_light
+  bedroom_lights:
+    name: Bedroom Lights
+    entities:
+      - light.tobins_lamp
+      - light.keelys_lamp
+      - light.bedroom_light
+  bedroom_lamps:
+    name: Bedroom Lamps
+    entities:
+      - light.tobins_lamp
+      - light.keelys_lamp
+  family:
+    name: Family
+    entities:
+      - person.keely_dunn
+      - person.tobin_dunn
+      - person.gannon_dunn
+      - person.kagan_dunn
+    icon: mdi:account-group
+  game_room_lights:
+    name: Game Room Lights
+    entities:
+      - light.game_room_lamp_one
+      - light.game_room_lamp_two
+      - light.game_room_rope_light
+      - switch.game_room_light_switch
+  game_room:
+    name: Game Room
+    entities:
+      - light.game_room_lamp_one
+      - light.game_room_lamp_two
+      - light.game_room_rope_light
+      - switch.game_room_heater
+      - switch.game_room_light_switch
+      - remote.game_room_hub
+  game_room_lamps:
+    name: Game Room Lamps
+    entities:
+      - light.game_room_lamp_one
+      - light.game_room_lamp_two
+  marcials_room:
+    name: Marcial's Room
+    entities:
+      - light.marcial_s_room_light
+  all_dunn_bar:
+    name: All Dunn Bar
+    entities:
+      - light.bar_light_one
+      - light.bar_light_two
+      - light.bar_light_three
+      - switch.under_bar_lights
+      - switch.garage_receiver
+      - switch.touch_screen
+      - switch.air_hockey_table
+      - switch.bar_sign
+      - light.bar_ceiling_lights
+  all_dunn_bar_lights:
+    name: All Dunn Bar Lights
+    entities:
+      - light.bar_light_one
+      - light.bar_light_two
+      - light.bar_light_three
+      - switch.under_bar_lights
+      - light.bar_ceiling_lights
+  indoor_lights:
+    name: Indoor Lights
+    entities:
+      - group.living_room_light
+      - group.dining_room_light
+      - group.kitchen_light
+      - group.bedroom_light
+      - group.boys_room_lights
+  indoor_devices:
+    name: Indoor Devices
+    entities:
+      - group.living_room
+      - group.dining_room
+      - group.boys_room
+      - group.bedroom
+      - light.hallway_light
+      - light.back_room_light
+      - group.game_room
+      - group.all_dunn_bar
+      - light.garage_light_switch
+      - group.garage_fans
+      - switch.bench_light
+      - group.marcials_room
+      - group.teagans_room
+  outdoors:
+    name: Outdoors
+    entities:
+      - light.back_door_light
+      - light.garage_light_one
+      - light.garage_light_two
+      - switch.front_door_light
+      - switch.outdoor_plug_one
+      - switch.outdoor_plug_two
+      - switch.outdoor_plug_three
+      - switch.outdoor_plug_four
+      - switch.outdoor_plug_five
+      - switch.outdoor_plug_six
+      - switch.outdoor_plug_seven
+      - switch.outdoor_plug_eight
+      - switch.outdoor_plug_nine
+      - switch.outdoor_plug_ten
+      - switch.outdoor_plug_eleven
+      - switch.outdoor_plug_twelve
+      - switch.back_yard_plug
+      - switch.front_door_plug
+  outdoor_plugs:
+    name: Outdoor Plugs
+    entities:
+      - switch.outdoor_plug_one
+      - switch.outdoor_plug_two
+      - switch.outdoor_plug_three
+      - switch.outdoor_plug_four
+      - switch.outdoor_plug_five
+      - switch.outdoor_plug_six
+      - switch.outdoor_plug_seven
+      - switch.outdoor_plug_eight
+      - switch.outdoor_plug_nine
+      - switch.outdoor_plug_ten
+      - switch.outdoor_plug_eleven
+      - switch.outdoor_plug_twelve
+      - switch.back_yard_plug
+      - switch.plugin_module_01
+      - switch.front_door_plug
+      - switch.air_hockey_table
+  outdoor_lights:
+    name: Outdoor Lights
+    entities:
+      - light.back_door_light
+      - light.garage_light_one
+      - light.garage_light_two
+      - switch.front_door_light
+  patio:
+    name: Patio
+    entities:
+      - remote.patio_speakers
+      - switch.patio_receiver
+  garage:
+    name: Garage
+    entities:
+      - light.garage_light_switch
+      - switch.bench_light
+      - switch.bench_fan
+  basement:
+    name: Basement
+    entities:
+      - light.keelys_office_light
+      - light.laundry_room_light_one
+      - light.laundry_room_light_two
+      - light.office_light
+      - switch.basement_dot_plug
+      - switch.credenza_apple_charger
+      - switch.credenza_plug_2
+      - switch.battery_charger
+      - switch.office_phone_charger
+      - switch.office_space_heater
+      - switch.office_usb_plug
+      - light.office_lamp
+      - switch.ender3
+      - switch.octoprint
+  upstairs_motion_sensors:
+    name: Upstairs Motion Sensors
+    entities:
+      - binary_sensor.upstairs_living_room_motion_sensor_motion
+      - binary_sensor.upstairs_bathroom_motion_sensor_motion
+      - binary_sensor.boy_s_room_motion_sensor_motion
+      - binary_sensor.marcials_room_motion_sensor_motion
+  upstairs_occupancy_sensors:
+    name: Upstairs Occupancy Sensors
+    entities:
+      - binary_sensor.upstairs_thermostat_occupancy
+      - binary_sensor.boy_s_room_occupancy
+      - remote.boys_hub
+  security_sensors:
+    name: Security Sensors
+    entities:
+      - binary_sensor.boys_room_motion_sensor
+      - binary_sensor.kitchen_motion_sensor
+      - binary_sensor.back_door_open
+#  alarm_siren:
+#    name: Alarm Siren
+#    entities:
+#
+  garage_fans:
+    name: Garage Fans
+    entities:
+      - switch.bench_fan
+    icon: mdi:fan
+  office_lights:
+    name: Office Lights
+    entities:
+      - light.office_lamp
+      - light.office_light
+      - switch.death_star
+  living_room_light:
+    name: Living Room Light
+    entities:
+      - light.living_room_bulb_one
+      - light.living_room_bulb_two
+      - light.living_room_bulb_three
+  ic_office_lights:
+    name: IC Office Lights
+    entities:
+      - switch.ic_office_switch_one
+      - switch.ic_office_switch_two
+  all_lights:
+    name: All Lights
+    entities:
+      - light.basement_landing_light
+      - light.back_room_light
+      - light.kitchen_light
+      - light.dining_room_light_switch
+      - light.living_room_light
+      - light.toy_room_light
+      - light.hallway_light
+      - light.teagans_lamp
+      - light.teagans_light
+      - switch.heart
+      - light.bathroom_light
+      - light.tobins_lamp
+      - light.keelys_lamp
+      - switch.bedroom_room_light
+      - light.laundry_room_lights
+      - light.basement_lights
+      - light.cellar_light
+      - light.office_light
+      - light.office_lamp
+      - light.office_toy_case
+      - light.3d_printer_lamp
+      - switch.maker_lamp
+      - switch.game_room_lamp_one
+      - light.game_room_lamp_two
+      - light.game_room_rope_light
+      - switch.game_room_light_switch
+      - light.server_room_light
+      - light.upstairs_landing_light
+      - light.upstairs_kitchen_light
+      - light.upstairs_hallway_light
+      - light.upstairs_living_room_light
+      - light.marcials_light
+      - light.boy_s_night_light
+      - light.kagans_lamp
+      - switch.gannons_lamp
+      - light.gannons_led
+      - light.kagans_led
+      - switch.gannon_cloud_light
+      - switch.kagan_cloud_light
+      - light.bar_light_one
+      - light.bar_light_two
+      - light.bar_light_three
+      - switch.under_bar_lights
+      - light.bar_ceiling_lights
+      - light.tech_bench
+      - light.tech_light
+      - switch.bench_light
+      - light.back_door_light
+      - light.garage_light_one
+      - light.garage_light_two
+      - light.garage_light
+      - switch.back_yard_lights
+      - light.patio_light
+      - light.house_light_one
+      - light.house_light_two
+      - light.house_light_three
+      - light.house_light_four
+      - light.house_light_five
+      - light.house_light_six
+      - light.house_light_seven
+  all_fans:
+    name: All Fans
+    entities:
+      - fan.bench_fan
+      - switch.teagans_fan
+      - switch.kagans_fan
+      - switch.gannons_fan
+      - switch.upstairs_fan
+  marcial_chores:
+    name: Marcial Chores
+    entities:
+      - input_boolean.marcial_brush_teeth
+      - input_boolean.marcial_clean_bedroom
+      - input_boolean.marcial_clean_dishes
+      - input_boolean.marcial_clean_upstairs
+      - input_boolean.marcial_clear_table
+      - input_boolean.marcial_feed_cat
+      - input_boolean.marcial_feed_dogs
+      - input_boolean.marcial_home_work
+      - input_boolean.marcial_make_bed
+      - input_boolean.marcial_potty
+      - input_boolean.marical_put_clothes_away
+      - input_boolean.marcial_put_dishes_away
+      - input_boolean.marcial_set_table
+      - input_boolean.marcial_trash
+  gannon_chores:
+    name: Gannon Chores
+    entities:
+      - input_boolean.gannon_brush_teeth
+      - input_boolean.gannon_clean_bedroom
+      - input_boolean.gannon_clean_dishes
+      - input_boolean.gannon_clean_upstairs
+      - input_boolean.gannon_clear_table
+      - input_boolean.gannon_feed_cat
+      - input_boolean.gannon_feed_dogs
+      - input_boolean.gannon_home_work
+      - input_boolean.gannon_make_bed
+      - input_boolean.gannon_potty
+      - input_boolean.gannon_put_clothes_away
+      - input_boolean.gannon_put_dishes_away
+      - input_boolean.gannon_set_table
+      - input_boolean.gannon_trash
+  kagan_chores:
+    name: Kagan Chores
+    entities:
+      - input_boolean.kagan_brush_teeth
+      - input_boolean.kagan_clean_bedroom
+      - input_boolean.kagan_clean_dishes
+      - input_boolean.kagan_clean_upstairs
+      - input_boolean.kagan_clear_table
+      - input_boolean.kagan_feed_cat
+      - input_boolean.kagan_feed_dogs
+      - input_boolean.kagan_home_work
+      - input_boolean.kagan_make_bed
+      - input_boolean.kagan_potty
+      - input_boolean.kagan_put_clothes_away
+      - input_boolean.kagan_put_dishes_away
+      - input_boolean.kagan_set_table
+      - input_boolean.kagan_trash
+  teagan_chores:
+    name: Teagan Chores
+    entities:
+      - input_boolean.teagan_brush_teeth
+      - input_boolean.teagan_clean_bedroom
+      - input_boolean.teagan_clean_dishes
+      - input_boolean.teagan_clean_upstairs
+      - input_boolean.teagan_make_bed
+      - input_boolean.teagan_potty
+      - input_boolean.teagan_put_clothes_away
+      - input_boolean.teagan_put_dishes_away
+      - input_boolean.teagan_set_table
+      - input_boolean.teagan_clear_table
+      - input_boolean.teagan_trash
+  upstairs:
+    name: Upstairs
+    entities:
+      - light.upstairs_living_room_bulb_01
+      - light.upstairs_living_room_bulb_02
+      - light.upstairs_living_room_bulb_03
+      - light.upstairs_hallway_light
+      - light.upstairs_kitchen_bulb_one
+      - light.upstairs_kitchen_bulb_two
+      - switch.kagan_cloud_light
+      - switch.gannon_cloud_light
+      - light.boys_night_light
+      - light.boys_room_lamp
+      - switch.upstairs_fan
+      - switch.kagans_fan
+      - switch.gannons_fan
+  downstairs_lights:
+    name: Downstairs Lights
+    entities:
+      - light.back_room_light
+      - light.kitchen_light
+      - light.dining_room_light_switch
+      - light.hallway_light
+      - light.bathroom_light
+      - light.living_room_light
+      - light.toy_room_light
+      - light.teagans_light
+      - light.teagans_lamp
+      - light.teagans_night_light_two
+      - switch.owl
+      - switch.lava_lamp
+      - light.keelys_lamp
+      - light.tobins_lamp
+  cloud_lights:
+    name: Cloud Lights
+    entities:
+      - switch.gannon_cloud_light
+      - switch.kagan_cloud_light
+  upstairs_lights:
+    name: Upstairs Lights
+    entities:
+      - light.upstairs_kitchen_light
+      - group.upstairs_living_room_light
+      - group.upstairs_hallway_light
+  upstairs_lights_lights:
+    name: upstairs Lights
+    entities:
+      - light.upstairs_living_room_bulb_01
+      - light.upstairs_living_room_bulb_02
+      - light.upstairs_living_room_bulb_03
+      - light.upstairs_hallway_light
+      - light.upstairs_kitchen_light
+      - switch.kagan_cloud_light
+      - switch.gannon_cloud_light
+      - light.boys_room_lamp
+      - light.boys_night_light
+      - light.marcial_s_light
+  boys_fans:
+    name: Boy's Fans
+    entities:
+      - switch.gannons_fan
+      - switch.kagans_fan
+    icon: mdi:fan
+  upstairs_fans:
+    name: Upstairs Fans
+    entities:
+      - switch.upstairs_fan
+      - switch.gannons_fan
+      - switch.kagans_fan
+    icon: mdi:fan
