@@ -10,6 +10,9 @@ echo "Starting Git backup" > /config/git_backup.log
 # Commit the changes with a timestamp
 /usr/bin/git commit -m "Automated backup $(date +'%Y-%m-%d %H:%M:%S')" >> /config/git_backup.log 2>&1
 
+# Configure the SSH key path
+git config core.sshCommand "ssh -i /config/.ssh/id_rsa -F /dev/null"
+
 # Push the changes to the master branch on GitHub
 /usr/bin/git push origin master --force >> /config/git_backup.log 2>&1
 
